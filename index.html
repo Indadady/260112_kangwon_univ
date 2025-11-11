@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강원대학교 글로벌 패스파인더: 중국 AI & 미래 기술 탐방</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f0f2f5; color: #1a202c; }
+        
+        /* Hero Background: Dark Blue/Tech Theme with Gold Accent */
+        .hero-bg-tech { background: linear-gradient(to bottom, #0f172a, #1e3a8a); } 
+        
+        /* Color Scheme: Gold/Yellow for Tourmaker Branding */
+        .nav-link { transition: color 0.3s, border-bottom-color 0.3s; }
+        .nav-link:hover, .nav-link.active { color: #ca8a04; border-bottom-color: #ca8a04; } /* yellow-600 */
+        .tab-btn { transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+        .tab-btn.active { background-color: #a16207; color: white; border-color: #a16207; } /* yellow-700 */
+        .timeline-item::before { content: ''; position: absolute; left: 11px; top: 12px; bottom: -12px; width: 2px; background-color: #e2e8f0; }
+        .timeline-item:last-child::before { display: none; }
+        .timeline-dot { position: absolute; left: 0; top: 12px; width: 24px; height: 24px; border-radius: 50%; background-color: white; border: 4px solid #a16207; } /* yellow-700 */
+        
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHfgIX70O5k6Anuo0UgALIdaG9jSga9auHu3uyz0uEirylGPAJnjN_qQbvEGMUvPqUQf_g9FMNUHRxlDcUBf4vZ3Mpy4TnA9WxbmzWYK11gt2zuy_Irl4wctNFjcjLyPo0GPXV792o_J7L9guRMuDfeC1gy7USwywjYbECZgzcsHybuGRRAXAnO1eNmP8/s320/logo.png" alt="Tourmaker Logo" class="h-8 w-auto">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent active">소개</a>
+                        <a href="#highlight" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">핵심 탐방</a>
+                        <a href="#timeline" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">전체일정</a>
+                        <a href="#details" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">상세일정</a>
+                        <a href="#checklist" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">준비사항</a>
+                        <a href="#emergency" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">비상연락</a>
+                        <a href="#feedback" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">마무리</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero-bg-tech text-white text-center flex items-center justify-center min-h-screen -mt-16">
+            <div class="container mx-auto px-4">
+                <p class="text-xl font-semibold text-yellow-300">2026 강원대학교 글로벌 패스파인더 프로그램</p>
+                <h1 class="text-5xl md:text-7xl font-black mt-4 leading-tight">중국 AI 혁신, 그 현장으로</h1>
+                
+                <div class="mt-8 mb-4">
+                    <!-- 강원대학교 로고 placeholder -->
+                    <img src="https://placehold.co/150x40/ca8a04/ffffff?text=Kangwon+Uni+Logo" alt="강원대학교 로고" class="h-10 mx-auto rounded-md">
+                </div>
+
+                <div class="mt-4 max-w-3xl mx-auto bg-black/50 p-6 rounded-lg">
+                    <h2 class="text-2xl font-bold mb-4">탐방 목적: 미래 데이터 사이언티스트의 시야 확장</h2>
+                    <p class="text-lg">본 프로그램은 단순 견학이 아닌, 세계 최대의 AI 생태계를 직접 체험하는 <strong>‘실증형 탐방’</strong>입니다. 중국의 거대 IT 기업, 자율주행 기술, 그리고 첨단 교육기관과의 교류를 통해 미래 사회의 디지털 혁신 트렌드를 파악하고, 전공 분야에 대한 깊이 있는 통찰력과 글로벌 경쟁력을 확보하는 것을 목표로 합니다.</p>
+                </div>
+                <div class="mt-8 flex flex-col md:flex-row justify-center gap-4 text-lg font-bold">
+                    <div class="bg-white/20 p-4 rounded-lg">🗓️ 2026.01.12 (월) ~ 01.16 (금) (4박 5일)</div>
+                    <div class="bg-white/20 p-4 rounded-lg">👨‍🏫 참가: 자유전공 학생 15명 / 교수 2명</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="highlight" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">✨ 글로벌 패스파인더의 3대 핵심 경험</h2>
+                <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+                     <div class="bg-yellow-700 text-white p-6 rounded-lg shadow-2xl flex flex-col">
+                        <h3 class="text-2xl font-bold mb-3 text-center">1. Alibaba AI Ecosystem 완벽 체험</h3>
+                        <p class="flex-grow mb-4 text-sm">알리바바 본사 공식 방문 및 관계자 설명을 통해 거대 IT 기업의 전략을 학습합니다. 또한, AI 무인화의 상징인 **플라이주 호텔에서 직접 숙박**하고 허마 스마트 마트를 체험합니다.</p>
+                        <ul class="list-disc list-inside bg-yellow-600 p-3 rounded-lg mt-auto text-sm">
+                            <li><strong class="text-yellow-200">Alibaba 본사:</strong> AI 기반 신유통/금융 전략</li>
+                            <li><strong class="text-yellow-200">FlyZoo Hotel:</strong> 안면 인식 및 로봇 서비스 숙박</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 text-white p-6 rounded-lg shadow-2xl flex flex-col">
+                        <h3 class="text-2xl font-bold mb-3 text-center">2. 미래 기술의 현장 실증</h3>
+                        <p class="flex-grow mb-4 text-sm">베이징/상해의 첨단 기술 집약체인 **바이두 ApolloPark**에서 L4 무인 운전 시스템을 경험합니다. 또한, 레노버 미래센터 방문을 통해 하드웨어 기업의 AI 솔루션 전환 전략을 확인합니다.</p>
+                        <ul class="list-disc list-inside bg-gray-700 p-3 rounded-lg mt-auto text-sm">
+                            <li><strong class="text-yellow-300">Baidu ApolloPark:</strong> L4 자율주행 차량 체험</li>
+                            <li><strong class="text-yellow-300">스마트버스:</strong> 실시간 운행 AI 모빌리티 탑승</li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-800 text-white p-6 rounded-lg shadow-2xl flex flex-col">
+                        <h3 class="text-2xl font-bold mb-3 text-center">3. 전문 지식 심화 & 교류</h3>
+                        <p class="flex-grow mb-4 text-sm">현지 IT 전문가 및 컨설턴트의 **중국 AI/IT 개론 특별 강의**를 수강하여 이론적 배경을 확보합니다. 마지막으로 **화동이공대학교**의 인공지능 학과 학생들과 교류하는 시간을 갖습니다.</p>
+                        <ul class="list-disc list-inside bg-blue-700 p-3 rounded-lg mt-auto text-sm">
+                            <li><strong class="text-yellow-200">IT/AI 특강:</strong> 현지 전문가의 심층 분석</li>
+                            <li><strong class="text-yellow-200">화동이공대:</strong> AI/정보과학 분야 학생 교류</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="mt-12 text-center text-xl font-semibold text-gray-800">이론을 넘어선 **'체험 기반 학습'**을 통해 강원대 글로벌 패스파인더의 역량을 강화합니다.</p>
+            </div>
+        </section>
+
+        <section id="timeline" class="py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">한눈에 보는 4박 5일 공식 일정</h2>
+                 <div class="max-w-3xl mx-auto">
+                    <div class="relative pl-8">
+                        <div class="timeline-item pb-12">
+                            <div class="timeline-dot"></div>
+                            <h3 class="text-xl font-bold mb-2">DAY 1: 항주 도착 및 AI 체험 시작</h3>
+                            <p class="text-gray-600">인천 출발 후 항주 도착. 허마 스마트마트 및 플라이주 AI 호텔 숙박.</p>
+                        </div>
+                        <div class="timeline-item pb-12">
+                            <div class="timeline-dot"></div>
+                            <h3 class="text-xl font-bold mb-2">DAY 2: 알리바바/자율주행 & 상해 이동</h3>
+                            <p class="text-gray-600">알리바바 본사, 스마트버스 체험 후 상해로 이동, 바이두 ApolloPark 체험.</p>
+                        </div>
+                        <div class="timeline-item pb-12">
+                            <div class="timeline-dot"></div>
+                            <h3 class="text-xl font-bold mb-2">DAY 3: IT/AI 특강 및 솔루션 탐방</h3>
+                            <p class="text-gray-600">레노버 미래센터, 泛微 방문 및 중국 IT 전문가의 특별 강의 수강.</p>
+                        </div>
+                        <div class="timeline-item pb-12">
+                            <div class="timeline-dot"></div>
+                            <h3 class="text-xl font-bold mb-2">DAY 4: 교육기관 교류 및 자유시간</h3>
+                            <p class="text-gray-600">화동이공대학교 원장단 및 학생들과 교류 세션 진행 후 자유 일정.</p>
+                        </div>
+                         <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h3 class="text-xl font-bold mb-2">DAY 5: 귀국</h3>
+                            <p class="text-gray-600">상해 푸동공항에서 인천으로 귀국합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="details" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">상세 일정표 (2026.01.12 ~ 01.16)</h2>
+                <div class="max-w-6xl mx-auto">
+                    <div class="mb-8 flex flex-wrap justify-center border-b">
+                        <button class="tab-btn active text-lg font-bold py-3 px-4 md:px-6 border-b-2" data-tab="day1">DAY 1</button>
+                        <button class="tab-btn text-lg font-bold py-3 px-4 md:px-6 border-b-2" data-tab="day2">DAY 2</button>
+                        <button class="tab-btn text-lg font-bold py-3 px-4 md:px-6 border-b-2" data-tab="day3">DAY 3</button>
+                        <button class="tab-btn text-lg font-bold py-3 px-4 md:px-6 border-b-2" data-tab="day4">DAY 4</button>
+                        <button class="tab-btn text-lg font-bold py-3 px-4 md:px-6 border-b-2" data-tab="day5">DAY 5</button>
+                    </div>
+                    <div id="tabs-content" class="p-4">
+                        <!-- Content will be rendered here by JS -->
+                    </div>
+                    <p class="text-center text-sm text-gray-500 mt-8">※ 상기 일정은 항공 또는 현지 상황에 의해 변동될 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="checklist" class="py-16 md:py-24">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">출국 전 필수 준비사항</h2>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-inner">
+                        <h3 class="text-2xl font-bold mb-6 text-center">✅ 필수 체크리스트</h3>
+                        <div id="checklist-container" class="space-y-4">
+                            <!-- Checklist items are generated by JS -->
+                        </div>
+                    </div>
+                    <div class="p-6 bg-yellow-50 rounded-lg shadow-inner">
+                        <h3 class="text-2xl font-bold mb-6 text-center text-yellow-800">🚨 중요 안내 (학생 필독)</h3>
+                        <ul class="space-y-4 text-gray-700">
+                             <li class="flex items-start"><span class="mr-3 text-yellow-600 font-bold">📢</span> <div><strong>여권 유효기간:</strong> 반드시 6개월 이상 남아있어야 합니다. (필수)</div></li>
+                            <li class="flex items-start"><span class="mr-3 text-yellow-600 font-bold">📢</span> <div><strong>현지 결제 (필수):</strong> <strong class="text-red-600">알리페이(Alipay) 또는 위챗페이</strong> 앱을 미리 설치하고 신용카드를 연동해 주세요. (현금 사용 불가 지역 多)</div></li>
+                            <li class="flex items-start"><span class="mr-3 text-yellow-600 font-bold">📢</span> <div><strong>인터넷 환경:</strong> 중국 현지에서는 <strong class="text-red-600">카카오톡, 구글, 인스타그램 등</strong>의 접속이 원활하지 않습니다. **VPN** 또는 로밍 시 제공되는 자체 네트워크 솔루션을 확인해야 합니다.</div></li>
+                            <li class="flex items-start"><span class="mr-3 text-yellow-600 font-bold">📢</span> <div><strong>현지 날씨 (1월):</strong> 상해/항주는 평균 2~10도로 쌀쌀합니다. 두꺼운 외투와 방한용품을 반드시 준비해주세요.</div></li>
+                            <li class="flex items-start"><span class="mr-3 text-yellow-600 font-bold">📢</span> <div><strong>전압:</strong> 220V로 동일하나 콘센트 모양이 다릅니다. 멀티 어댑터 또는 변환 플러그를 준비해주세요.</div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="emergency" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">비상 상황 대처 및 연락망</h2>
+                 <div class="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-6 bg-red-50 rounded-lg border border-red-200">
+                        <h3 class="text-xl font-bold text-red-800 mb-4">긴급 연락처 (현지)</h3>
+                        <ul class="space-y-2">
+                            <li><span class="font-semibold">경찰 (公安):</span> 110</li>
+                            <li><span class="font-semibold">소방 (火警):</span> 119</li>
+                            <li><span class="font-semibold">구급 (急救):</span> 120</li>
+                        </ul>
+                    </div>
+                     <div class="p-6 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <h3 class="text-xl font-bold text-yellow-800 mb-4">투어메이커 담당자 (단독 진행)</h3>
+                        <ul class="space-y-2">
+                            <!-- 수정된 부분 -->
+                            <li><span class="font-semibold">총괄 책임:</span> 조혁 이사 (010-4249-4026)</li>
+                            <li><span class="font-semibold">대표/실무 인솔:</span> 이재명 (010-9443-7881)</li>
+                            <li><span class="font-semibold">현지 통역:</span> (현지 미팅 시 안내 예정)</li>
+                            <!-- // 수정된 부분 -->
+                        </ul>
+                    </div>
+                     <div class="p-6 bg-blue-50 rounded-lg border border-blue-200">
+                        <h3 class="text-xl font-bold text-blue-800 mb-4">대한민국 영사 협력</h3>
+                        <ul class="space-y-2">
+                            <li><span class="font-semibold">주상하이 총영사관:</span> +86-21-6295-5000</li>
+                            <li><span class="font-semibold">긴급(사건/사고):</span> +86-138-1650-9503</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="feedback" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">글로벌 패스파인더에게</h2>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-4">기술을 읽는 통찰력이 미래를 디자인합니다.</h3>
+                    <p class="text-lg text-gray-600">이번 상해/항주 탐방은 단순한 경험을 넘어, 여러분이 데이터 사이언스 전문가로 성장하는 데 필요한 혁신적 사고와 글로벌 네트워크를 구축하는 소중한 기회가 될 것입니다. 적극적인 자세와 질문을 통해 최대한의 배움을 얻으시기를 응원합니다.</p>
+                    <p class="mt-6 font-bold text-xl">성공적인 탐방이 되도록 투어메이커가 최선을 다해 지원하겠습니다.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHfgIX70O5k6Anuo0UgALIdaG9jSga9auHu3uyz0uEirylGPAJnjN_qQbvEGMUvPqUQf_g9FMNUHRxlDcUBf4vZ3Mpy4TnA9WxbmzWYK11gt2zuyz0uEirylGPAJnjN_qQbvEGMUvPqUQf_g9FMNUHRxlDcUBf4vZ3Mpy4TnA9WxbmzWYK11gt2zuy_Irl4wctNFjcjLyPo0GPXV792o_J7L9guRMuDfeC1gy7USwywjYbECZgzcsHybuGRRAXAnO1eNmP8/s320/logo.png" alt="Tourmaker" class="h-8 mx-auto mb-4 opacity-80">
+        <p>&copy; 2026 Tourmaker. All Rights Reserved.</p>
+        <p>안전하고 유익한 탐방이 되도록 최선을 다하겠습니다.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // --- 1. Nav Link Active Scroll ---
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { threshold: 0.3 });
+            sections.forEach(section => observer.observe(section));
+            
+            // --- 2. Interactive Checklist ---
+            const checklistContainer = document.getElementById('checklist-container');
+            const checklistItems = [
+                { id: 'passport', text: '여권 (유효기간 6개월+)' },
+                { id: 'eticket', text: '항공권 (E-티켓)' },
+                { id: 'alipay', text: '알리페이/위챗페이 설치 및 연동' },
+                { id: 'creditcard', text: '해외 사용 가능 신용카드' },
+                { id: 'adapter', text: '멀티 어댑터 또는 변환 플러그' },
+                { id: 'medicine', text: '개인 상비약 (감기약, 마스크 등)' },
+                { id: 'clothes', text: '방한용 의류 및 편한 신발' },
+                { id: 'vpn', text: '개인용 VPN 또는 로밍 준비 (선택)' }
+            ];
+            
+            checklistItems.forEach(item => {
+                const div = document.createElement('div');
+                div.classList.add('flex', 'items-center');
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox'; checkbox.id = item.id;
+                // Use yellow theme for checkbox
+                checkbox.classList.add('h-5', 'w-5', 'rounded', 'border-gray-300', 'text-yellow-700', 'focus:ring-yellow-500');
+                const label = document.createElement('label');
+                label.htmlFor = item.id; label.textContent = item.text;
+                label.classList.add('ml-3', 'text-gray-700', 'font-medium', 'cursor-pointer');
+                div.appendChild(checkbox); div.appendChild(label);
+                checklistContainer.appendChild(div);
+                
+                // Load from localStorage
+                checkbox.checked = localStorage.getItem(item.id) === 'true';
+                // Save to localStorage (using temporary storage as firestore is not requested here)
+                checkbox.addEventListener('change', (e) => { 
+                    localStorage.setItem(item.id, e.target.checked); 
+                });
+            });
+
+            // --- 3. Itinerary Tab Content (Updated to 5 Days using PDF) ---
+            const scheduleData = {
+                day1: {
+                    title: 'DAY 1: 1월 12일 (월) - 항주 도착 및 AI 체험 시작',
+                    items: [
+                        { time: '09:20', desc: '인천 국제공항 출발 (KE107)', icon: '✈️' },
+                        { time: '10:55', desc: '항주 샤오산 국제공항 도착', icon: '🛬' },
+                        { time: '오후', desc: '가이드 미팅 후 중식 (사천요리)', icon: '🚌' },
+                        { time: '15:00', desc: '<strong class="text-yellow-800">[공식] 항저우 류샤오롱 라이프 전시관</strong> (관계자 설명 및 통역)', icon: '💡' },
+                        { time: '18:00', desc: '<strong class="text-yellow-800">[핵심] 친청리 허마 스마트마트 체험</strong> (안면인식 결제, 자동 물류)', icon: '🛒' },
+                        { time: '숙박', desc: '<strong class="text-red-600">항주 플라이주(FlyZoo) 호텔 숙박</strong> (알리바바 AI 무인화 호텔)', icon: '🏨' },
+                    ]
+                },
+                day2: {
+                    title: 'DAY 2: 1월 13일 (화) - 항주 AI 핵심 & 상해 이동',
+                    items: [
+                        { time: '오전', desc: '호텔 조식 후 체크아웃', icon: '🥐' },
+                        { time: '09:00', desc: '<strong class="text-yellow-800">[공식] 알리바바(Alibaba) 본사 공식 방문</strong> (관계자 설명 및 통역)', icon: '🏢' },
+                        { time: '11:00', desc: '<strong class="text-yellow-800">[체험] 스마트버스 탑승</strong> (L4 자율주행 12인승 미니버스)', icon: '🤖' },
+                        { time: '점심', desc: '항주 특색요리 (동파육) 후 상해로 이동 (약 3시간 소요)', icon: '🍴' },
+                        { time: '18:00', desc: '<strong class="text-yellow-800">[체험] 바이두 ApolloPark 무인운전 체험</strong>', icon: '🚗' },
+                        { time: '숙박', desc: '상해 포동 베스트 혹은 동급 (준5성급)', icon: '🏨' },
+                    ]
+                },
+                day3: {
+                    title: 'DAY 3: 1월 14일 (수) - 상해 IT 솔루션 및 전문 강의',
+                    items: [
+                        { time: '오전', desc: '호텔 조식 후 출발', icon: '🥐' },
+                        { time: '09:00', desc: '<strong class="text-yellow-800">[공식] 레노버(Lenovo) 미래센터 방문</strong> (AI/DX 솔루션, 관계자 설명)', icon: '💻' },
+                        { time: '11:00', desc: '<strong class="text-yellow-800">[공식] 泛微(Weaver) 방문</strong> (중국 기업용 SaaS 시장 분석, 관계자 설명)', icon: '📊' },
+                        { time: '점심', desc: '샤브샤브 무제한', icon: '🍴' },
+                        { time: '14:00', desc: '<strong class="text-red-600">[특강 1]</strong> 중국 IT 개론 및 특이점 (지오유 신판수)', icon: '🎙️' },
+                        { time: '15:30', desc: '<strong class="text-red-600">[특강 2]</strong> 중국 AI 기술, AI 인프라와 GPU (아이요넷 신동욱 대표)', icon: '📡' },
+                        { time: '숙박', desc: '상해 포동 베스트 혹은 동급 (준5성급)', icon: '🏨' },
+                    ]
+                },
+                day4: {
+                    title: 'DAY 4: 1월 15일 (목) - 화동이공대 교류 및 시내 탐방',
+                    items: [
+                        { time: '오전', desc: '호텔 조식 후 이동', icon: '🥐' },
+                        { time: '10:00', desc: '<strong class="text-yellow-800">[공식] 화동이공대학교 원장단 및 학생 교류</strong> (인공지능, 정보과학과공정학원)', icon: '🎓' },
+                        { time: '점심', desc: '자유식', icon: '🍴' },
+                        { time: '오후', desc: '<strong class="text-yellow-800">자유시간 및 상해 시내 탐방</strong> (학생 자율 일정)', icon: '🛍️' },
+                        { time: '숙박', desc: '상해 포동 베스트 혹은 동급 (준5성급)', icon: '🏨' },
+                    ]
+                },
+                day5: {
+                    title: 'DAY 5: 1월 16일 (금) - 상해 출발 및 귀국',
+                    items: [
+                        { time: '오전', desc: '호텔 조식', icon: '🥐' },
+                        { time: '08:50', desc: '공항으로 이동', icon: '🚌' },
+                        { time: '12:00', desc: '상해 푸동 국제공항 출발 (KE892)', icon: '✈️' },
+                        { time: '15:20', desc: '인천 국제공항 도착 후 해산', icon: '🛬' },
+                        { time: '식사', desc: '조식: 호텔식', icon: '🍴' },
+                    ]
+                }
+            };
+            
+            const tabsContainer = document.getElementById('tabs-content');
+            const tabButtons = document.querySelectorAll('.tab-btn');
+
+            function renderTabContent(day) {
+                const data = scheduleData[day];
+                let content = `<h3 class="text-2xl font-bold mb-6">${data.title}</h3><ul class="space-y-4">`;
+                data.items.forEach(item => {
+                    // Split the icon from the description for better layout
+                    const [icon, ...descParts] = item.icon.split(' ');
+                    const descText = descParts.join(' ') + item.desc;
+                    content += `<li class="flex items-start"><span class="text-2xl mr-4">${item.icon}</span><div><p class="font-bold">${item.time}</p><p class="text-gray-600">${item.desc}</p></div></li>`;
+                });
+                content += '</ul>';
+                
+                tabsContainer.innerHTML = content;
+            }
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    renderTabContent(button.dataset.tab);
+                });
+            });
+
+            // Initial load
+            renderTabContent('day1');
+        });
+    </script>
+</body>
+</html>
