@@ -36,9 +36,9 @@
         .hover-zoom { transition: transform 0.3s ease; }
         .hover-zoom:hover { transform: scale(1.02); }
         
-        /* City Card Styling */
-        .city-card img { transition: transform 0.5s ease; }
-        .city-card:hover img { transform: scale(1.05); }
+        /* Custom Scrollbar for Client List */
+        .client-scroll::-webkit-scrollbar { height: 6px; }
+        .client-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
     </style>
 </head>
 <body class="antialiased">
@@ -47,7 +47,7 @@
     <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <!-- Tourmaker Logo -->
+                <!-- Tourmaker Logo (Vertical) -->
                 <div class="flex-shrink-0">
                     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHfgIX70O5k6Anuo0UgALIdaG9jSga9auHu3uyz0uEirylGPAJnjN_qQbvEGMUvPqUQf_g9FMNUHRxlDcUBf4vZ3Mpy4TnA9WxbmzWYK11gt2zuy_Irl4wctNFjcjLyPo0GPXV792o_J7L9guRMuDfeC1gy7USwywjYbECZgzcsHybuGRRAXAnO1eNmP8/s16000/logo.png" alt="Tourmaker Logo" class="h-8 w-auto">
                 </div>
@@ -56,9 +56,10 @@
                         <a href="#home" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent active">소개</a>
                         <a href="#highlight" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">핵심 탐방</a>
                         <a href="#university" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent text-blue-800">동화대학교</a>
-                        <a href="#cities" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">탐방 도시</a> <!-- New Link -->
-                        <a href="#timeline" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">전체일정</a>
-                        <a href="#checklist" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">준비사항</a>
+                        <a href="#companies" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent text-indigo-700">기업&특강</a>
+                        <a href="#cities" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">도시</a>
+                        <a href="#timeline" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">일정</a>
+                        <a href="#checklist" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">준비</a>
                     </div>
                 </div>
             </div>
@@ -79,7 +80,7 @@
 
                 <div class="mt-4 max-w-3xl mx-auto bg-slate-900/60 backdrop-blur-sm p-6 rounded-xl border border-slate-700">
                     <h2 class="text-2xl font-bold mb-3">미래 데이터 사이언티스트의 시야 확장</h2>
-                    <p class="text-lg text-slate-200">세계 최대의 AI 생태계 알리바바와 자율주행 기술, 그리고 <span class="text-yellow-400 font-bold">상해 동화대학교(Donghua Univ)</span>와의 교류를 통해 글로벌 경쟁력을 확보하는 '실증형 탐방' 프로그램입니다.</p>
+                    <p class="text-lg text-slate-200">세계 최대의 AI 생태계 알리바바와 자율주행, <span class="text-yellow-400 font-bold">동화대학교</span> 교류, 그리고 <span class="text-indigo-300 font-bold">현지 IT 전문가 특강</span>을 통해 글로벌 경쟁력을 확보하는 '실증형 탐방' 프로그램입니다.</p>
                 </div>
                 
                 <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4 text-lg font-bold">
@@ -132,7 +133,7 @@
             </div>
         </section>
 
-        <!-- Donghua University Spotlight Section -->
+        <!-- Donghua University Section (Restored 3 Points) -->
         <section id="university" class="py-20 bg-slate-50">
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
@@ -158,7 +159,7 @@
                                     <li><strong>규모:</strong> 유학생 1,400명 이상의 다국적 교육기관</li>
                                 </ul>
                             </div>
-                            <h3 class="text-xl font-bold mb-4 text-slate-800">✨ 방문 매력 포인트</h3>
+                            <!-- 3 Charm Points Restored -->
                             <ul class="space-y-4">
                                 <li class="flex items-start">
                                     <span class="flex-shrink-0 w-8 h-8 bg-yellow-100 text-yellow-700 rounded-full flex items-center justify-center font-bold mr-3">1</span>
@@ -179,12 +180,95 @@
             </div>
         </section>
 
-        <!-- NEW SECTION: City Insights -->
-        <section id="cities" class="py-20 bg-white">
+        <!-- Corporate Visits & Special Lectures Section -->
+        <section id="companies" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <span class="text-indigo-600 font-bold tracking-wider uppercase">Industrial Insight</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">방문 기업 및 전문가 특강</h2>
+                    <p class="text-slate-500 mt-4">중국 현지에서 활약 중인 IT/SW 전문 기업을 방문하여 생생한 현장 경험을 듣습니다.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+                    <!-- Company 1: ZioYou -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all">
+                        <div class="relative h-56 bg-indigo-900 overflow-hidden group">
+                            <img src="https://zioyouit.com/wp-content/uploads/2024/04/gw_mainvis.png" alt="ZioYou Dashboard" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/80 to-transparent w-full p-6">
+                                <h3 class="text-2xl font-bold text-white">ZioYou Software <span class="text-sm font-normal text-indigo-300 ml-2">| 상해지오유소프트웨어</span></h3>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="mb-6">
+                                <span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-bold px-2 py-1 rounded">Enterprise Solution</span>
+                                <span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-bold px-2 py-1 rounded">Global HR/OA</span>
+                            </div>
+                            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                                현대자동차, LS네트웍스, SKC 등 글로벌 대기업이 선택한 <strong>OA 및 e-HR 솔루션 전문 기업</strong>입니다. 한국 기업의 중국 진출 시 필수적인 인사/협업 프로세스를 지원하며, 모바일 스마트워크 환경을 선도하고 있습니다.
+                            </p>
+                            
+                            <!-- Special Lecture Info -->
+                            <div class="bg-white p-5 rounded-xl border border-indigo-100 shadow-sm">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-2">🎙️</span>
+                                    <h4 class="font-bold text-indigo-900">전문가 특강 01</h4>
+                                </div>
+                                <p class="text-sm font-bold text-slate-800">주제: 중국 IT 개론 및 시장의 특이점</p>
+                                <p class="text-sm text-slate-500 mt-1">연사: 신판수 대표 (지오유 소프트웨어)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Company 2: AiyoNet -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all">
+                        <div class="relative h-56 bg-slate-800 overflow-hidden group">
+                            <div class="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center">
+                                <div class="text-center">
+                                    <h3 class="text-3xl font-black text-white tracking-widest">AIYONET</h3>
+                                    <p class="text-slate-400 text-sm mt-2">Shanghai Aiyo Network Technology</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="mb-6">
+                                <span class="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Cloud & Security</span>
+                                <span class="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">IDC Infrastructure</span>
+                            </div>
+                            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                                2005년 설립 이래 15년간 <strong>서버/클라우드 호스팅 및 보안 컨설팅</strong>을 제공해온 인프라 전문 기업입니다. 알리바바 클라우드 파트너이자 한국무역협회, 베이직하우스 등의 보안/네트워크를 책임지고 있습니다.
+                            </p>
+                            
+                            <div class="mb-6">
+                                <p class="text-xs font-bold text-slate-400 uppercase mb-2">Major Clients & History</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-white border rounded text-xs text-slate-600">CESCO</span>
+                                    <span class="px-2 py-1 bg-white border rounded text-xs text-slate-600">Basic House</span>
+                                    <span class="px-2 py-1 bg-white border rounded text-xs text-slate-600">Shinhan Bank</span>
+                                    <span class="px-2 py-1 bg-white border rounded text-xs text-slate-600">Mediheal</span>
+                                    <span class="px-2 py-1 bg-white border rounded text-xs text-slate-600">KITA</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-5 rounded-xl border border-blue-100 shadow-sm">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-2xl mr-2">📡</span>
+                                    <h4 class="font-bold text-blue-900">전문가 특강 02</h4>
+                                </div>
+                                <p class="text-sm font-bold text-slate-800">주제: 중국 AI 인프라와 GPU 트렌드</p>
+                                <p class="text-sm text-slate-500 mt-1">연사: 신동욱 대표 (아이요넷)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cities Section (Detailed Updates) -->
+        <section id="cities" class="py-20 bg-slate-50">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16">
                     <span class="text-yellow-600 font-bold tracking-wider uppercase">City Insights</span>
-                    <h2 class="text-3xl md:text-4xl font-bold mt-2">탐방 도시 미리보기: 과거와 미래의 공존</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">탐방 도시 미리보기</h2>
                 </div>
 
                 <!-- Shanghai Block -->
@@ -194,19 +278,19 @@
                         <h3 class="text-3xl font-bold text-slate-900 mb-6">상하이 (Shanghai) <span class="text-lg font-normal text-gray-500">| 동서 문화의 만남</span></h3>
                         
                         <div class="space-y-6">
-                            <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                             <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
                                 <h4 class="font-bold text-lg mb-2 text-slate-800">📜 역사와 성장</h4>
                                 <p class="text-slate-600 leading-relaxed text-sm">
-                                    작은 어촌에서 시작해 19세기 아편전쟁 이후 조약항으로 개방되며 서구 문물이 유입되었습니다. 20세기 초 금융·상업의 허브로 성장하며 건축, 패션, 문화가 급격히 변화한 "동서양의 만남"의 장소입니다.
+                                    작은 어촌에서 시작해 19세기 조약항 개방 후 서구 문물이 유입되었습니다. 20세기 초 금융·상업의 허브로 성장하며 건축, 패션, 문화가 급격히 변화한 "동서양의 만남"의 장소입니다.
                                 </p>
                             </div>
-                            <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                            <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
                                 <h4 class="font-bold text-lg mb-2 text-slate-800">🎭 문화적 특징 (해파이 문화)</h4>
-                                <p class="text-slate-600 leading-relaxed text-sm">
-                                    <strong>건축:</strong> '와이탄(The Bund)'의 서양식 건물군과 전통 건축의 조화.<br>
-                                    <strong>미식:</strong> 샤오롱바오(소룡포), 생지엔 등 해산물과 간장/설탕을 활용한 풍미.<br>
-                                    <strong>언어:</strong> 고유의 상하이 방언과 강소/절강 문화의 영향.
-                                </p>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-slate-600">
+                                    <li><strong>건축:</strong> '와이탄(The Bund)'의 서양식 건물군과 전통 건축의 조화.</li>
+                                    <li><strong>미식:</strong> 샤오롱바오(소룡포), 생지엔 등 해산물과 간장/설탕을 활용한 풍미.</li>
+                                    <li><strong>언어:</strong> 고유의 상하이 방언과 강소/절강 문화의 영향.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -227,19 +311,19 @@
                         <h3 class="text-3xl font-bold text-slate-900 mb-6">항저우 (Hangzhou) <span class="text-lg font-normal text-gray-500">| 혁신과 전통의 조화</span></h3>
                         
                         <div class="space-y-6">
-                            <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                            <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
                                 <h4 class="font-bold text-lg mb-2 text-slate-800">📜 유서 깊은 역사</h4>
                                 <p class="text-slate-600 leading-relaxed text-sm">
                                     신석기 양저우 문화의 발상지이자 남송(南宋) 시대의 수도였던 유서 깊은 도시입니다. 최근에는 알리바바 본사가 위치한 '전자상거래와 기술 혁신의 중심지'로 급부상했습니다.
                                 </p>
                             </div>
-                            <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                            <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
                                 <h4 class="font-bold text-lg mb-2 text-slate-800">🎭 자연과 도시의 융합</h4>
-                                <p class="text-slate-600 leading-relaxed text-sm">
-                                    <strong>서호(West Lake):</strong> 인간과 자연의 완벽한 융합으로 유네스코 세계유산 등재.<br>
-                                    <strong>특산물:</strong> 차(茶)와 비단(실크)의 본고장 (용정차 유명).<br>
-                                    <strong>혁신:</strong> 고즈넉한 운하 문화와 최첨단 IT 산업이 공존하는 도시.
-                                </p>
+                                <ul class="list-disc list-inside space-y-2 text-sm text-slate-600">
+                                    <li><strong>서호(West Lake):</strong> 인간과 자연의 완벽한 융합으로 유네스코 세계유산 등재.</li>
+                                    <li><strong>특산물:</strong> 차(茶)와 비단(실크)의 본고장 (용정차 유명).</li>
+                                    <li><strong>혁신:</strong> 고즈넉한 운하 문화와 최첨단 IT 산업이 공존하는 도시.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -270,9 +354,12 @@
 
                         <!-- Day 3 -->
                         <div class="relative">
-                            <div class="absolute -left-[43px] md:-left-[47px] top-1 w-6 h-6 bg-white border-4 border-slate-300 rounded-full"></div>
-                            <h3 class="text-xl font-bold text-slate-800">DAY 3: IT 솔루션 & 전문가 특강</h3>
-                            <p class="text-slate-600 mt-1">레노버 미래센터, 泛微(Weaver) 탐방 및 중국 IT/AI 인사이트 특강</p>
+                            <div class="absolute -left-[43px] md:-left-[47px] top-0 w-8 h-8 bg-indigo-600 border-4 border-white rounded-full shadow-md"></div>
+                            <h3 class="text-xl font-bold text-indigo-900">DAY 3: IT 솔루션 & 전문가 특강</h3>
+                            <p class="text-slate-600 mt-1">
+                                <span class="font-bold">ZioYou & AiyoNet 기업 탐방</span><br>
+                                중국 IT 개론(신판수 대표) 및 AI 인프라(신동욱 대표) 특강
+                            </p>
                         </div>
 
                         <!-- Day 4 -->
@@ -301,7 +388,7 @@
                     <div class="flex flex-wrap border-b">
                         <button class="tab-btn active flex-1 py-4 font-bold text-sm md:text-base border-b-4 border-transparent hover:bg-slate-50" data-tab="day1">DAY 1</button>
                         <button class="tab-btn flex-1 py-4 font-bold text-sm md:text-base border-b-4 border-transparent hover:bg-slate-50" data-tab="day2">DAY 2</button>
-                        <button class="tab-btn flex-1 py-4 font-bold text-sm md:text-base border-b-4 border-transparent hover:bg-slate-50" data-tab="day3">DAY 3</button>
+                        <button class="tab-btn flex-1 py-4 font-bold text-sm md:text-base border-b-4 border-transparent hover:bg-slate-50 text-indigo-700" data-tab="day3">DAY 3</button>
                         <button class="tab-btn flex-1 py-4 font-bold text-sm md:text-base border-b-4 border-transparent hover:bg-slate-50 text-blue-700" data-tab="day4">DAY 4</button>
                         <button class="tab-btn flex-1 py-4 font-bold text-sm md:text-base border-b-4 border-transparent hover:bg-slate-50" data-tab="day5">DAY 5</button>
                     </div>
@@ -324,12 +411,10 @@
                             <!-- JS generates items -->
                         </div>
                     </div>
-                    
-                    <!-- Important Notice (Updated for Visa-Free 2026) -->
+                    <!-- Important Notice -->
                     <div class="bg-yellow-50 p-8 rounded-2xl border border-yellow-200">
                         <h3 class="text-xl font-bold mb-6 text-yellow-800 flex items-center">🚨 중요 안내사항</h3>
                         <ul class="space-y-4 text-sm md:text-base text-slate-700">
-                            <!-- 무비자 관련 내용 업데이트 -->
                             <li class="flex items-start">
                                 <span class="mr-3 text-xl">🛂</span>
                                 <div>
@@ -345,11 +430,7 @@
                             </li>
                             <li class="flex items-start">
                                 <span class="mr-3 text-xl">💳</span>
-                                <span><strong>결제 수단:</strong> 중국은 현금 사용이 어렵습니다. <span class="text-red-600 font-bold">알리페이/위챗페이</span>에 카드를 미리 등록해주세요.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="mr-3 text-xl">🌐</span>
-                                <span><strong>인터넷 (VPN):</strong> 카톡, 구글, 유튜브 접속이 제한됩니다. 로밍 혹은 VPN을 준비하세요.</span>
+                                <span><strong>결제 수단:</strong> 중국은 현금 사용이 어렵습니다. <span class="text-red-600 font-bold">알리페이/위챗페이</span> 등록 필수.</span>
                             </li>
                         </ul>
                     </div>
@@ -381,7 +462,7 @@
 
     </main>
 
-    <!-- Footer (Logo Removed) -->
+    <!-- Footer -->
     <footer class="bg-slate-900 text-slate-400 py-12 text-center border-t border-slate-800">
         <div class="container mx-auto px-4">
             <p class="mb-4 font-medium text-slate-300">성공적인 탐방이 되도록 투어메이커가 최선을 다해 지원하겠습니다.</p>
@@ -411,14 +492,15 @@
             }, { threshold: 0.25 });
             sections.forEach(section => observer.observe(section));
             
-            // 2. Schedule Data
+            // 2. Schedule Data - Restored & Detailed
             const scheduleData = {
                 day1: {
                     title: 'DAY 1: 1월 12일 (월) - 출국 및 항주 AI 체험',
                     items: [
                         { time: '09:20', desc: '인천 국제공항 출발 (KE107)', icon: '✈️' },
                         { time: '10:55', desc: '항주 샤오산 국제공항 도착', icon: '🛬' },
-                        { time: '오후', desc: '항저우 류샤오롱 라이프 전시관 (관계자 미팅)', icon: '💡' },
+                        { time: '오후', desc: '가이드 미팅 후 중식 (사천요리)', icon: '🍴' },
+                        { time: '15:00', desc: '항저우 류샤오롱 라이프 전시관 (관계자 미팅)', icon: '💡' },
                         { time: '18:00', desc: '<strong class="text-yellow-700">친청리 허마 스마트마트</strong> (안면인식 결제 체험)', icon: '🛒' },
                         { time: '숙박', desc: '항주 플라이주(FlyZoo) 호텔 (알리바바 무인 호텔)', icon: '🏨' },
                     ]
@@ -427,8 +509,8 @@
                     title: 'DAY 2: 1월 13일 (화) - 알리바바 & 상해 이동',
                     items: [
                         { time: '09:00', desc: '<strong class="text-yellow-700">알리바바(Alibaba) 본사 공식 방문</strong>', icon: '🏢' },
-                        { time: '11:00', desc: '스마트버스 탑승 (L4 자율주행)', icon: '🤖' },
-                        { time: '오후', desc: '상해로 이동 (약 3시간 소요)', icon: '🚌' },
+                        { time: '11:00', desc: '스마트버스 탑승 (L4 자율주행 12인승)', icon: '🤖' },
+                        { time: '점심', desc: '항주 특색요리 (동파육) 후 상해 이동 (약 3시간)', icon: '🚌' },
                         { time: '18:00', desc: '<strong class="text-yellow-700">바이두 ApolloPark</strong> 무인운전 체험', icon: '🚗' },
                         { time: '숙박', desc: '상해 포동 베스트 혹은 동급', icon: '🏨' },
                     ]
@@ -436,10 +518,11 @@
                 day3: {
                     title: 'DAY 3: 1월 14일 (수) - 기업 탐방 및 특강',
                     items: [
-                        { time: '09:00', desc: '레노버(Lenovo) 미래센터 방문', icon: '💻' },
-                        { time: '11:00', desc: '泛微(Weaver) SaaS 기업 탐방', icon: '📊' },
-                        { time: '14:00', desc: '[특강 1] 중국 IT 개론 및 특이점 (지오유 신판수)', icon: '🎙️' },
-                        { time: '15:30', desc: '[특강 2] 중국 AI 인프라와 GPU (아이요넷 신동욱)', icon: '📡' },
+                        { time: '09:00', desc: '<strong class="text-indigo-700">레노버(Lenovo) 미래센터</strong> 방문', icon: '💻' },
+                        { time: '11:00', desc: '<strong class="text-indigo-700">泛微(Weaver)</strong> 탐방', icon: '📊' },
+                        { time: '점심', desc: '샤브샤브 무제한', icon: '🍴' },
+                        { time: '14:00', desc: '<strong class="text-indigo-900">[특강 1]</strong> 중국 IT 개론 (신판수 대표)', icon: '🎙️' },
+                        { time: '15:30', desc: '<strong class="text-blue-900">[특강 2]</strong> 중국 AI 인프라 (신동욱 대표)', icon: '📡' },
                         { time: '숙박', desc: '상해 포동 베스트 혹은 동급', icon: '🏨' },
                     ]
                 },
@@ -447,8 +530,9 @@
                     title: 'DAY 4: 1월 15일 (목) - 동화대학교 교류',
                     items: [
                         { time: '오전', desc: '호텔 조식 후 이동', icon: '🥐' },
-                        { time: '10:00', desc: '<strong class="text-blue-700 text-lg">동화대학교(Donghua Univ) 공식 방문</strong><br><span class="text-sm text-gray-500">- 캠퍼스 투어, 국제학원 및 관계자 교류<br>- 글로벌 교육 허브 및 미래 융합 현장 확인</span>', icon: '🎓' },
-                        { time: '오후', desc: '상해 시내 문화 탐방 (자유 일정)', icon: '🛍️' },
+                        { time: '10:00', desc: '동화대학교(Donghua Univ) 공식 방문', icon: '🎓' },
+                        { time: '점심', desc: '자유식', icon: '🍴' },
+                        { time: '오후', desc: '상해 시내 문화 탐방 (학생 자율)', icon: '🛍️' },
                         { time: '숙박', desc: '상해 포동 베스트 혹은 동급', icon: '🏨' },
                     ]
                 },
