@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>강원대학교 글로벌 패스파인더: 중국 AI & 미래 기술 탐방</title>
+    <title>2026 강원대학교 글로벌 패스파인더: Smart Guidebook</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
         
         /* Hero Background */
         .hero-bg-tech { 
-            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.8)), url('https://dhu-edu.kr/wp-content/uploads/2021/10/%E6%9D%BE%E6%B1%9F%E6%A0%A1%E5%8C%BA4-scaled.jpg');
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(30, 58, 138, 0.8)), url('https://dhu-edu.kr/wp-content/uploads/2021/10/%E6%9D%BE%E6%B1%9F%E6%A0%A1%E5%8C%BA4-scaled.jpg');
             background-size: cover;
             background-position: center;
         } 
@@ -28,38 +28,46 @@
         /* Timeline Styling */
         .timeline-item::before { content: ''; position: absolute; left: 11px; top: 12px; bottom: -12px; width: 2px; background-color: #cbd5e1; }
         .timeline-item:last-child::before { display: none; }
-        .timeline-dot { position: absolute; left: 0; top: 12px; width: 24px; height: 24px; border-radius: 50%; background-color: white; border: 4px solid #ca8a04; z-index: 10; }
         
         html { scroll-behavior: smooth; }
-        
-        /* Image Hover Effect */
         .hover-zoom { transition: transform 0.3s ease; }
         .hover-zoom:hover { transform: scale(1.02); }
-        
-        /* Custom Scrollbar for Client List */
-        .client-scroll::-webkit-scrollbar { height: 6px; }
-        .client-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+
+        /* Play Button Overlay for Thumbnails */
+        .play-overlay {
+            background: rgba(0, 0, 0, 0.4);
+            transition: all 0.3s;
+        }
+        .group:hover .play-overlay {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .play-icon {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .group:hover .play-icon {
+            transform: scale(1.2);
+        }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-slate-50">
 
     <!-- Header / Navigation -->
     <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <!-- Tourmaker Logo (Vertical) -->
-                <div class="flex-shrink-0">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHfgIX70O5k6Anuo0UgALIdaG9jSga9auHu3uyz0uEirylGPAJnjN_qQbvEGMUvPqUQf_g9FMNUHRxlDcUBf4vZ3Mpy4TnA9WxbmzWYK11gt2zuy_Irl4wctNFjcjLyPo0GPXV792o_J7L9guRMuDfeC1gy7USwywjYbECZgzcsHybuGRRAXAnO1eNmP8/s16000/logo.png" alt="Tourmaker Logo" class="h-8 w-auto">
+                <!-- Tourmaker Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEitI-Z-hD82keOJ1AqHw-VTZjpw2U-O5UjtV9h3zblyG0wjsVfBWe9X9o0Q_Spctrt7krkd9qXO0xKTmGJLw4gyMZrRqpshKMFttnyx6OcC8-IGz3XLUZpGQOnRqVdol8jz5HuoDLqsEifnVRhcjUJHm13Sz8JrX9aPswMNUwZPvGtJEnQjhc2PiXlo-B8" alt="Tourmaker Logo" class="h-8 w-auto">
+                    <span class="hidden md:inline text-xs text-slate-500 font-medium tracking-tighter">2026 Global Pathfinder</span>
                 </div>
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#home" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent active">소개</a>
-                        <a href="#highlight" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">핵심 탐방</a>
-                        <a href="#university" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent text-blue-800">동화대학교</a>
-                        <a href="#companies" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent text-indigo-700">기업&특강</a>
-                        <a href="#cities" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">도시</a>
-                        <a href="#timeline" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">일정</a>
-                        <a href="#checklist" class="nav-link px-3 py-2 text-sm font-medium border-b-2 border-transparent">준비</a>
+                    <div class="ml-10 flex items-baseline space-x-4 text-sm font-medium">
+                        <a href="#home"       class="nav-link px-3 py-2 border-b-2 border-transparent active">소개</a>
+                        <a href="#highlight"  class="nav-link px-3 py-2 border-b-2 border-transparent">핵심 탐방</a>
+                        <a href="#university" class="nav-link px-3 py-2 border-b-2 border-transparent">대학&기업</a>
+                        <a href="#cities"     class="nav-link px-3 py-2 border-b-2 border-transparent text-indigo-600 font-bold">도시영상</a>
+                        <a href="#timeline"   class="nav-link px-3 py-2 border-b-2 border-transparent">일정</a>
+                        <a href="#pretravel"  class="nav-link px-3 py-2 border-b-2 border-transparent text-red-600 font-bold">출발/미팅</a>
                     </div>
                 </div>
             </div>
@@ -68,24 +76,34 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="hero-bg-tech text-white text-center flex items-center justify-center min-h-screen -mt-16 relative">
+        <!-- Fixed: Added pt-20 (padding-top) to ensure content is not hidden behind the fixed header on mobile -->
+        <section id="home" class="hero-bg-tech text-white text-center flex items-center justify-center min-h-screen pt-20 pb-10 relative">
             <div class="container mx-auto px-4 z-10">
                 <p class="text-xl font-semibold text-yellow-400 mb-2">2026 강원대학교 글로벌 패스파인더</p>
-                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight drop-shadow-lg">중국 AI 혁신 & 글로벌 캠퍼스<br>그 현장으로</h1>
+                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight drop-shadow-lg">
+                    중국 AI 혁신 & 글로벌 캠퍼스<br>그 현장으로
+                </h1>
                 
-                <!-- 강원대학교 로고 -->
                 <div class="inline-block bg-white/95 p-4 rounded-xl shadow-lg mb-8">
                     <img src="https://wwwk.kangwon.ac.kr/site/www/images/common/logo.png" alt="강원대학교 로고" class="h-12 w-auto">
                 </div>
 
                 <div class="mt-4 max-w-3xl mx-auto bg-slate-900/60 backdrop-blur-sm p-6 rounded-xl border border-slate-700">
                     <h2 class="text-2xl font-bold mb-3">미래 데이터 사이언티스트의 시야 확장</h2>
-                    <p class="text-lg text-slate-200">세계 최대의 AI 생태계 알리바바와 자율주행, <span class="text-yellow-400 font-bold">동화대학교</span> 교류, 그리고 <span class="text-indigo-300 font-bold">현지 IT 전문가 특강</span>을 통해 글로벌 경쟁력을 확보하는 '실증형 탐방' 프로그램입니다.</p>
+                    <p class="text-lg text-slate-200">
+                        <span class="text-yellow-400 font-bold">알리바바 & 바이두 자율주행</span>, 
+                        <span class="text-yellow-400 font-bold">동화대학교</span> 교류, 
+                        <span class="text-indigo-300 font-bold">현지 IT 전문가 특강</span>을 통한 실증형 탐방 프로그램
+                    </p>
                 </div>
                 
                 <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4 text-lg font-bold">
-                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-lg">🗓️ 2026.01.12 (월) ~ 01.16 (금)</div>
-                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-lg">📍 상해(Shanghai) / 항주(Hangzhou)</div>
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-lg">
+                        🗓️ 2026.01.12 (월) ~ 01.16 (금)
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-lg">
+                        📍 상해(Shanghai) / 항주(Hangzhou)
+                    </div>
                 </div>
             </div>
         </section>
@@ -98,11 +116,14 @@
                     <h2 class="text-3xl md:text-4xl font-bold mt-2">글로벌 패스파인더 3대 핵심 경험</h2>
                 </div>
                 <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-                     <!-- Card 1 -->
-                     <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col">
+                      <!-- Card 1 -->
+                      <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col">
                         <div class="bg-yellow-100 w-14 h-14 rounded-full flex items-center justify-center mb-6 text-2xl">🏢</div>
                         <h3 class="text-2xl font-bold mb-3 text-slate-800">Alibaba Ecosystem</h3>
-                        <p class="text-slate-600 flex-grow mb-4">알리바바 본사 공식 방문 및 관계자 브리핑. AI 무인화의 상징인 **플라이주 호텔 숙박**과 허마 스마트 마트를 체험합니다.</p>
+                        <p class="text-slate-600 flex-grow mb-4">
+                            알리바바 본사 공식 방문 및 관계자 브리핑. 
+                            AI 무인화의 상징인 <strong>플라이주 호텔 숙박</strong>과 허마 스마트 마트 체험.
+                        </p>
                         <ul class="text-sm space-y-2 text-slate-700 font-medium bg-white p-4 rounded-lg border">
                             <li>✔️ Alibaba 본사: 신유통/금융 전략</li>
                             <li>✔️ FlyZoo Hotel: 로봇 서비스 숙박</li>
@@ -112,7 +133,9 @@
                     <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col">
                         <div class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-6 text-2xl">🚗</div>
                         <h3 class="text-2xl font-bold mb-3 text-slate-800">Future Mobility</h3>
-                        <p class="text-slate-600 flex-grow mb-4">베이징/상해의 기술 집약체 **바이두 ApolloPark**에서 L4 무인 운전 시스템 경험 및 레노버 미래센터 AI 솔루션을 확인합니다.</p>
+                        <p class="text-slate-600 flex-grow mb-4">
+                            베이징/상해의 기술 집약체 <strong>바이두 ApolloPark</strong>에서 L4 무인 운전 시스템 경험 및 레노버 미래센터 AI 솔루션을 확인합니다.
+                        </p>
                         <ul class="text-sm space-y-2 text-slate-700 font-medium bg-white p-4 rounded-lg border">
                             <li>✔️ Baidu ApolloPark: 자율주행 체험</li>
                             <li>✔️ Smart Bus: AI 모빌리티 실증</li>
@@ -123,7 +146,9 @@
                         <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500 rounded-full blur-3xl opacity-20 -mr-16 -mt-16"></div>
                         <div class="bg-slate-700 w-14 h-14 rounded-full flex items-center justify-center mb-6 text-2xl">🎓</div>
                         <h3 class="text-2xl font-bold mb-3">Donghua University</h3>
-                        <p class="text-slate-300 flex-grow mb-4">중국 내 대표 글로벌 교육 허브 **동화대학교**를 방문하여 국제학, 미래융합 교육 현장을 체험하고 인사이트를 넓힙니다.</p>
+                        <p class="text-slate-300 flex-grow mb-4">
+                            중국 내 대표 글로벌 교육 허브 <strong>동화대학교</strong>를 방문하여 국제학, 미래융합 교육 현장을 체험하고 인사이트를 넓힙니다.
+                        </p>
                         <ul class="text-sm space-y-2 text-slate-200 font-medium bg-slate-800 p-4 rounded-lg border border-slate-600">
                             <li>✔️ QS 패션/디자인 Top 30 명문</li>
                             <li>✔️ 글로벌 캠퍼스 & 융합 교육 체험</li>
@@ -159,7 +184,6 @@
                                     <li><strong>규모:</strong> 유학생 1,400명 이상의 다국적 교육기관</li>
                                 </ul>
                             </div>
-                            <!-- 3 Charm Points -->
                             <ul class="space-y-4">
                                 <li class="flex items-start">
                                     <span class="flex-shrink-0 w-8 h-8 bg-yellow-100 text-yellow-700 rounded-full flex items-center justify-center font-bold mr-3">1</span>
@@ -180,7 +204,7 @@
             </div>
         </section>
 
-        <!-- Corporate Visits & Special Lectures Section -->
+        <!-- Corporate Visits Section -->
         <section id="companies" class="py-20 bg-white">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16">
@@ -239,13 +263,11 @@
                             </p>
                             
                             <div class="mb-6">
-                                <p class="text-xs font-bold text-slate-400 uppercase mb-2">Major Clients & History</p>
+                                <p class="text-xs font-bold text-slate-400 uppercase mb-2">Major Clients</p>
                                 <div class="flex flex-wrap gap-2">
                                     <span class="px-2 py-1 bg-white border rounded text-xs text-slate-600">CESCO</span>
                                     <span class="px-2 py-1 bg-white border rounded text-xs text-slate-600">Basic House</span>
                                     <span class="px-2 py-1 bg-white border rounded text-xs text-slate-600">Shinhan Bank</span>
-                                    <span class="px-2 py-1 bg-white border rounded text-xs text-slate-600">Mediheal</span>
-                                    <span class="px-2 py-1 bg-white border rounded text-xs text-slate-600">KITA</span>
                                 </div>
                             </div>
 
@@ -263,67 +285,106 @@
             </div>
         </section>
 
-        <!-- Cities Section (Detailed Updates) -->
-        <section id="cities" class="py-20 bg-slate-50">
+        <!-- Cities Video & Info Section -->
+        <section id="cities" class="py-20 bg-slate-50 border-t">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <span class="text-yellow-600 font-bold tracking-wider uppercase">City Insights</span>
+                <div class="text-center mb-12">
+                    <span class="text-blue-600 font-bold tracking-wider uppercase">City Preview</span>
                     <h2 class="text-3xl md:text-4xl font-bold mt-2">탐방 도시 미리보기</h2>
+                    <p class="text-slate-500 mt-2">영상과 사진으로 만나는 상하이와 항저우</p>
                 </div>
-
-                <!-- Shanghai Block -->
-                <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
-                    <div class="order-2 md:order-1">
-                        <div class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold mb-4">Shanghai</div>
-                        <h3 class="text-3xl font-bold text-slate-900 mb-6">상하이 (Shanghai) <span class="text-lg font-normal text-gray-500">| 동서 문화의 만남</span></h3>
-                        
-                        <div class="space-y-6">
-                             <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                                <h4 class="font-bold text-lg mb-2 text-slate-800">📜 역사와 성장</h4>
-                                <p class="text-slate-600 leading-relaxed text-sm">
-                                    작은 어촌에서 시작해 19세기 조약항 개방 후 서구 문물이 유입되었습니다. 20세기 초 금융·상업의 허브로 성장하며 건축, 패션, 문화가 급격히 변화한 "동서양의 만남"의 장소입니다.
-                                </p>
+                
+                <div class="max-w-6xl mx-auto space-y-20">
+                    <!-- Shanghai Block -->
+                    <div class="grid lg:grid-cols-2 gap-10 items-center">
+                        <div class="order-2 lg:order-1">
+                            <div class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold mb-4">Shanghai</div>
+                            <h3 class="text-3xl font-bold text-slate-900 mb-6">상하이 (Shanghai) <span class="text-lg font-normal text-gray-500">| 미래를 만나다</span></h3>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                                    <h4 class="font-bold text-lg mb-2 text-slate-800">📜 역사와 성장</h4>
+                                    <p class="text-slate-600 text-sm leading-relaxed">
+                                        작은 어촌에서 시작해 19세기 개항 후 서구 문물이 유입되며 금융·상업의 허브로 급성장했습니다.
+                                        와이탄의 고풍스러운 건축물과 푸동의 최첨단 마천루가 마주 보는 독특한 스카이라인을 자랑합니다.
+                                    </p>
+                                </div>
+                                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                                    <h4 class="font-bold text-lg mb-2 text-slate-800">🎭 문화적 특징 (해파이)</h4>
+                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                                        <li><strong>건축:</strong> 동서양 건축 양식의 조화 (와이탄 vs 푸동)</li>
+                                        <li><strong>미식:</strong> 샤오롱바오, 생지엔 등 다채로운 딤섬 문화</li>
+                                        <li><strong>언어:</strong> 독특한 상하이 방언과 국제적 분위기 공존</li>
+                                    </ul>
+                                </div>
+                                <div class="flex gap-4">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Shanghai_skyline_from_the_bund.jpg" alt="상하이 스카이라인" class="w-1/2 h-32 object-cover rounded-lg shadow-sm hover-zoom">
+                                    <img src="https://www.classicist.org/assets/images/articles/_pagebody/Figure-1-street-view-of-the-bund.jpg" alt="와이탄 거리" class="w-1/2 h-32 object-cover rounded-lg shadow-sm hover-zoom">
+                                </div>
                             </div>
-                            <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                                <h4 class="font-bold text-lg mb-2 text-slate-800">🎭 문화적 특징 (해파이 문화)</h4>
-                                <ul class="list-disc list-inside space-y-2 text-sm text-slate-600">
-                                    <li><strong>건축:</strong> '와이탄(The Bund)'의 서양식 건물군과 전통 건축의 조화.</li>
-                                    <li><strong>미식:</strong> 샤오롱바오(소룡포), 생지엔 등 해산물과 간장/설탕을 활용한 풍미.</li>
-                                    <li><strong>언어:</strong> 고유의 상하이 방언과 강소/절강 문화의 영향.</li>
-                                </ul>
+                        </div>
+                        <div class="order-1 lg:order-2">
+                            <!-- Shanghai Video -->
+                            <div class="bg-white p-3 rounded-2xl shadow-xl border border-slate-200">
+                                <div class="relative aspect-video rounded-xl overflow-hidden bg-slate-900 cursor-pointer group" onclick="playVideo(this, 'Ly6Botr2638')">
+                                    <img src="https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Shanghai Video Thumbnail" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity">
+                                    <div class="absolute inset-0 flex items-center justify-center play-overlay">
+                                        <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white play-icon">
+                                            <span class="text-white text-4xl ml-2">▶</span>
+                                        </div>
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/90 to-transparent">
+                                        <p class="text-white font-bold text-xl">SHANGHAI: Cinematic 4K</p>
+                                        <p class="text-slate-300 text-sm mt-1">상해의 과거와 현재를 영상으로 확인하세요</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="order-1 md:order-2 grid gap-4">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Shanghai_skyline_from_the_bund.jpg" alt="상하이 스카이라인" class="w-full h-64 object-cover rounded-2xl shadow-lg hover-zoom city-card">
-                        <img src="https://www.classicist.org/assets/images/articles/_pagebody/Figure-1-street-view-of-the-bund.jpg" alt="와이탄 거리" class="w-full h-48 object-cover rounded-xl shadow-md hover-zoom city-card">
-                    </div>
-                </div>
 
-                <!-- Hangzhou Block -->
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="grid gap-4">
-                        <img src="https://res.klook.com/images/fl_lossy.progressive%2Cq_65/c_fill%2Cw_1295%2Ch_720/w_80%2Cx_15%2Cy_15%2Cg_south_west%2Cl_Klook_water_br_trans_yhcmh3/activities/c1b0c94b-Grand-Canal-and-Culture-of-Hangzhou/GrandCanalandCultureofHangzhou.jpg" alt="항주 운하" class="w-full h-64 object-cover rounded-2xl shadow-lg hover-zoom city-card">
-                        <img src="https://www.alexisjetsets.com/wp-content/uploads/2019/06/hangzhou-west-lake-alexisjetsets-13-e1560138753302.jpg" alt="항주 서호" class="w-full h-48 object-cover rounded-xl shadow-md hover-zoom city-card">
-                    </div>
-                    <div>
-                        <div class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold mb-4">Hangzhou</div>
-                        <h3 class="text-3xl font-bold text-slate-900 mb-6">항저우 (Hangzhou) <span class="text-lg font-normal text-gray-500">| 혁신과 전통의 조화</span></h3>
-                        
-                        <div class="space-y-6">
-                            <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                                <h4 class="font-bold text-lg mb-2 text-slate-800">📜 유서 깊은 역사</h4>
-                                <p class="text-slate-600 leading-relaxed text-sm">
-                                    신석기 양저우 문화의 발상지이자 남송(南宋) 시대의 수도였던 유서 깊은 도시입니다. 최근에는 알리바바 본사가 위치한 '전자상거래와 기술 혁신의 중심지'로 급부상했습니다.
-                                </p>
+                    <!-- Hangzhou Block -->
+                    <div class="grid lg:grid-cols-2 gap-10 items-center">
+                        <div class="order-1">
+                            <!-- Hangzhou Video -->
+                            <div class="bg-white p-3 rounded-2xl shadow-xl border border-slate-200">
+                                <div class="relative aspect-video rounded-xl overflow-hidden bg-slate-900 cursor-pointer group" onclick="playVideo(this, 'gBLWtXkXHoo')">
+                                    <img src="https://img.youtube.com/vi/gBLWtXkXHoo/maxresdefault.jpg" alt="Hangzhou Video Thumbnail" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity">
+                                    <div class="absolute inset-0 flex items-center justify-center play-overlay">
+                                        <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white play-icon">
+                                            <span class="text-white text-4xl ml-2">▶</span>
+                                        </div>
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/90 to-transparent">
+                                        <p class="text-white font-bold text-xl">HANGZHOU: Heaven on Earth</p>
+                                        <p class="text-slate-300 text-sm mt-1">혁신과 자연이 공존하는 알리바바의 도시</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                                <h4 class="font-bold text-lg mb-2 text-slate-800">🎭 자연과 도시의 융합</h4>
-                                <ul class="list-disc list-inside space-y-2 text-sm text-slate-600">
-                                    <li><strong>서호(West Lake):</strong> 인간과 자연의 완벽한 융합으로 유네스코 세계유산 등재.</li>
-                                    <li><strong>특산물:</strong> 차(茶)와 비단(실크)의 본고장 (용정차 유명).</li>
-                                    <li><strong>혁신:</strong> 고즈넉한 운하 문화와 최첨단 IT 산업이 공존하는 도시.</li>
-                                </ul>
+                        </div>
+                        <div class="order-2">
+                            <div class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold mb-4">Hangzhou</div>
+                            <h3 class="text-3xl font-bold text-slate-900 mb-6">항저우 (Hangzhou) <span class="text-lg font-normal text-gray-500">| 혁신과 전통</span></h3>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                                    <h4 class="font-bold text-lg mb-2 text-slate-800">📜 유서 깊은 역사</h4>
+                                    <p class="text-slate-600 text-sm leading-relaxed">
+                                        남송(南宋) 시대의 수도이자 신석기 양저우 문화의 발상지입니다. 
+                                        최근에는 알리바바 본사가 위치한 '중국 전자상거래와 기술 혁신의 심장부'로 재탄생했습니다.
+                                    </p>
+                                </div>
+                                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                                    <h4 class="font-bold text-lg mb-2 text-slate-800">🎭 자연과 도시의 융합</h4>
+                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                                        <li><strong>서호(West Lake):</strong> 유네스코 세계유산으로 지정된 절경</li>
+                                        <li><strong>특산물:</strong> 용정차(녹차)와 비단(실크)의 본고장</li>
+                                        <li><strong>혁신:</strong> 모바일 결제와 스마트 시티 기술의 선도 도시</li>
+                                    </ul>
+                                </div>
+                                <div class="flex gap-4">
+                                    <img src="https://res.klook.com/images/fl_lossy.progressive%2Cq_65/c_fill%2Cw_1295%2Ch_720/w_80%2Cx_15%2Cy_15%2Cg_south_west%2Cl_Klook_water_br_trans_yhcmh3/activities/c1b0c94b-Grand-Canal-and-Culture-of-Hangzhou/GrandCanalandCultureofHangzhou.jpg" alt="항주 운하" class="w-1/2 h-32 object-cover rounded-lg shadow-sm hover-zoom">
+                                    <img src="https://www.alexisjetsets.com/wp-content/uploads/2019/06/hangzhou-west-lake-alexisjetsets-13-e1560138753302.jpg" alt="항주 서호" class="w-1/2 h-32 object-cover rounded-lg shadow-sm hover-zoom">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -334,66 +395,158 @@
         <!-- Timeline Section -->
         <section id="timeline" class="py-20 bg-white">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">4박 5일 공식 일정</h2>
-                <div class="max-w-3xl mx-auto pl-4 md:pl-0">
-                    <div class="relative pl-8 md:pl-12 border-l-2 border-slate-200 space-y-12">
-                        
-                        <!-- Day 1 -->
-                        <div class="relative">
-                            <div class="absolute -left-[43px] md:-left-[47px] top-1 w-6 h-6 bg-white border-4 border-slate-300 rounded-full"></div>
-                            <h3 class="text-xl font-bold text-slate-800">DAY 1: 항주 도착 및 AI 체험</h3>
-                            <p class="text-slate-600 mt-1">인천 ➔ 항주 | 허마 스마트마트 & 플라이주(FlyZoo) AI 호텔 숙박</p>
-                        </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-2">4박 5일 공식 일정</h2>
+                <p class="text-center text-slate-500 text-sm mb-10">※ 상기 일정은 항공 및 현지 사정에 의하여 다소 변경될 수 있습니다.</p>
+                
+                <!-- Tab Navigation -->
+                <div class="max-w-5xl mx-auto bg-slate-50 rounded-t-2xl shadow-sm border-b overflow-hidden flex flex-wrap">
+                    <button class="tab-btn active flex-1 py-4 font-bold text-sm md:text-base border-b-4 border-transparent hover:bg-slate-100 transition-colors" data-tab="day1">DAY 1</button>
+                    <button class="tab-btn flex-1 py-4 font-bold text-sm md:text-base border-b-4 border-transparent hover:bg-slate-100 transition-colors" data-tab="day2">DAY 2</button>
+                    <button class="tab-btn flex-1 py-4 font-bold text-sm md:text-base border-b-4 border-transparent hover:bg-slate-100 transition-colors text-indigo-700" data-tab="day3">DAY 3</button>
+                    <button class="tab-btn flex-1 py-4 font-bold text-sm md:text-base border-b-4 border-transparent hover:bg-slate-100 transition-colors text-blue-700" data-tab="day4">DAY 4</button>
+                    <button class="tab-btn flex-1 py-4 font-bold text-sm md:text-base border-b-4 border-transparent hover:bg-slate-100 transition-colors" data-tab="day5">DAY 5</button>
+                </div>
 
-                        <!-- Day 2 -->
-                        <div class="relative">
-                            <div class="absolute -left-[43px] md:-left-[47px] top-1 w-6 h-6 bg-white border-4 border-slate-300 rounded-full"></div>
-                            <h3 class="text-xl font-bold text-slate-800">DAY 2: 알리바바 & 상해 이동</h3>
-                            <p class="text-slate-600 mt-1">알리바바 본사, 스마트버스 체험 ➔ 상해 이동 ➔ 바이두 ApolloPark</p>
-                        </div>
-
-                        <!-- Day 3 -->
-                        <div class="relative">
-                            <div class="absolute -left-[43px] md:-left-[47px] top-0 w-8 h-8 bg-indigo-600 border-4 border-white rounded-full shadow-md"></div>
-                            <h3 class="text-xl font-bold text-indigo-900">DAY 3: IT 솔루션 & 전문가 특강</h3>
-                            <p class="text-slate-600 mt-1">
-                                <span class="font-bold">레노버 미래센터 & IT 전문가 특강</span><br>
-                                중국 IT 개론(신판수 대표) 및 AI 인프라(신동욱 대표) 특강
-                            </p>
-                        </div>
-
-                        <!-- Day 4 -->
-                        <div class="relative">
-                            <div class="absolute -left-[43px] md:-left-[47px] top-0 w-8 h-8 bg-yellow-500 border-4 border-white rounded-full shadow-md"></div>
-                            <h3 class="text-xl font-bold text-blue-900">DAY 4: 동화대학교 교류 & 문화 탐방</h3>
-                            <p class="text-slate-600 mt-1"><strong>동화대학교(Donghua Univ)</strong> 캠퍼스 투어 및 교류 ➔ 상해 시내 자율 탐방</p>
-                        </div>
-
-                        <!-- Day 5 -->
-                        <div class="relative">
-                            <div class="absolute -left-[43px] md:-left-[47px] top-1 w-6 h-6 bg-white border-4 border-slate-300 rounded-full"></div>
-                            <h3 class="text-xl font-bold text-slate-800">DAY 5: 귀국</h3>
-                            <p class="text-slate-600 mt-1">상해 푸동공항 ➔ 인천공항 도착</p>
-                        </div>
+                <!-- Tab Content -->
+                <div class="max-w-5xl mx-auto bg-white rounded-b-2xl shadow-xl p-8 md:p-12 min-h-[400px] border border-slate-100">
+                    <div id="tabs-content">
+                        <!-- JS renders content here -->
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Details Tab Section -->
-        <section id="details" class="py-20 bg-slate-50">
+        <!-- Pre-Travel Guide (Expanded) -->
+        <section id="pretravel" class="py-20 bg-slate-50">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">상세 타임테이블</h2>
-                <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
-                    <div class="flex flex-wrap border-b">
-                        <button class="tab-btn active flex-1 py-4 font-bold text-sm md:text-base border-b-4 border-transparent hover:bg-slate-50" data-tab="day1">DAY 1</button>
-                        <button class="tab-btn flex-1 py-4 font-bold text-sm md:text-base border-b-4 border-transparent hover:bg-slate-50" data-tab="day2">DAY 2</button>
-                        <button class="tab-btn flex-1 py-4 font-bold text-sm md:text-base border-b-4 border-transparent hover:bg-slate-50 text-indigo-700" data-tab="day3">DAY 3</button>
-                        <button class="tab-btn flex-1 py-4 font-bold text-sm md:text-base border-b-4 border-transparent hover:bg-slate-50 text-blue-700" data-tab="day4">DAY 4</button>
-                        <button class="tab-btn flex-1 py-4 font-bold text-sm md:text-base border-b-4 border-transparent hover:bg-slate-50" data-tab="day5">DAY 5</button>
+                <div class="max-w-5xl mx-auto mb-12 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3">출발 가이드 & 공항 안내</h2>
+                    <p class="text-slate-600">성공적인 탐방을 위한 필수 정보를 확인하세요.</p>
+                </div>
+
+                <!-- Airport Meeting Card (High Priority) -->
+                <div class="max-w-4xl mx-auto bg-red-50 border-2 border-red-200 rounded-2xl p-8 mb-12 shadow-lg flex flex-col md:flex-row gap-8">
+                    <div class="flex-shrink-0 flex items-start justify-center md:justify-start">
+                        <div class="bg-red-100 p-4 rounded-full">
+                            <span class="text-4xl">🚩</span>
+                        </div>
                     </div>
-                    <div id="tabs-content" class="p-8 md:p-12 min-h-[400px]">
-                        <!-- JS renders content here -->
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-bold text-red-700 mb-2 text-center md:text-left">공항 집합 안내 (필독)</h3>
+                        <p class="text-slate-700 mb-6 text-center md:text-left">비행기 출발 3시간 전 미팅입니다. 늦지 않게 도착해주세요.</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Meeting Info -->
+                            <div class="space-y-4">
+                                <div class="bg-white p-4 rounded-lg border border-red-100 shadow-sm">
+                                    <p class="text-xs text-slate-500 font-bold uppercase">Meeting Time</p>
+                                    <p class="text-xl font-black text-slate-800">2026.01.12 (월) 09:00</p>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border border-red-100 shadow-sm">
+                                    <p class="text-xs text-slate-500 font-bold uppercase">Location</p>
+                                    <p class="text-lg font-bold text-slate-800">인천공항 T2 <span class="text-red-600">C카운터 앞 도너츠 가게</span></p>
+                                </div>
+                            </div>
+                            
+                            <!-- Meeting Point Photo -->
+                            <div class="bg-white p-2 rounded-lg border border-red-100 shadow-sm">
+                                <p class="text-xs text-slate-500 font-bold uppercase mb-2 pl-2">Photo View</p>
+                                <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgpzSAnQWf5T8_84QSdgGYqxqJjEcdziiFjrPSZ8K0cThZtnM0oARbs3aDAcPTPIvrzGiB7LzYsiQ9F667J4dnDo580NK_cuezP1r66oiEpR9pUWR8tz2fRMomaWHiPOQMy0LRoJvEGb5KexvIQaPGP19_iqF20jitYysLCjIVdaJUHHEVbm3ekMYmDodA" alt="미팅 장소: 인천공항 T2 C카운터 앞 도너츠가게" class="w-full h-32 object-cover rounded hover-zoom">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Check-in -->
+                    <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-bold mb-3 flex items-center text-blue-900">
+                            ✈️ 대한항공 모바일 체크인
+                        </h3>
+                        <ol class="list-decimal list-inside text-sm text-slate-700 space-y-2">
+                            <li>대한항공 앱/웹 접속 후 <strong>[체크인]</strong> 선택</li>
+                            <li>예약번호/성함/출발일로 일정 조회</li>
+                            <li>여권 정보 확인 및 좌석 선택</li>
+                            <li><strong>모바일 탑승권 발급</strong> (캡처/저장 필수)</li>
+                            <li>공항 수하물 위탁 시 여권+탑승권 제시</li>
+                        </ol>
+                    </div>
+                    <!-- Arrival Card (Updated for Electronic) -->
+                    <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-bold mb-3 flex items-center text-red-900">
+                            🛂 전자 입국신고서 (필수)
+                        </h3>
+                        <p class="text-sm text-slate-600 mb-2"><strong>모든 외국인 승객</strong>은 사전 작성이 원칙입니다.</p>
+                        <ul class="list-disc list-inside text-sm text-slate-700 space-y-2">
+                            <li><strong>시행:</strong> 항저우 포함 전면 확대 시행 중</li>
+                            <li><strong>방법:</strong> 출발 전 모바일 링크로 사전 작성 권장</li>
+                            <li><strong>혜택:</strong> 도착 후 입국 수속 대기 시간 단축</li>
+                            <li class="pt-1">
+                                <a href="https://s.nia.gov.cn/ArrivalCardFillingPhone/" target="_blank" class="inline-block bg-red-100 text-red-700 px-3 py-1 rounded text-xs font-bold hover:bg-red-200 transition-colors">
+                                    🔗 작성 페이지 바로가기 (공식)
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Weather -->
+                    <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-bold mb-3 flex items-center text-slate-800">
+                            🧥 1월 날씨 & 옷차림
+                        </h3>
+                        <p class="text-sm text-slate-600 mb-2">한국의 초겨울~한겨울 날씨 (3℃ ~ 10℃)</p>
+                        <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
+                            <li>습도가 높아 체감 온도는 더 쌀쌀함</li>
+                            <li><strong>추천:</strong> 패딩/두툼한 코트, 목도리, 따뜻한 양말</li>
+                            <li>실내는 난방 차이가 크므로 <strong>레이어드 복장</strong> 권장</li>
+                        </ul>
+                    </div>
+                    <!-- Payment -->
+                    <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-bold mb-3 flex items-center text-green-800">
+                            💳 결제 & 통신 가이드
+                        </h3>
+                        <ul class="list-disc list-inside text-sm text-slate-700 space-y-2">
+                            <li><strong>결제:</strong> 알리페이/위챗페이 필수 (카드 미리 등록)</li>
+                            <li>편의점, 택시 등 대부분 모바일 결제</li>
+                            <li>비상용 실물 카드(Visa/Master) 1장 준비</li>
+                            <li><strong>통신:</strong> eSIM/로밍/유심 (학교 안내 따름)</li>
+                        </ul>
+                    </div>
+                    <!-- Safety -->
+                    <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-bold mb-3 flex items-center text-orange-800">
+                            ⚠️ 안전 수칙 & 현지 매너
+                        </h3>
+                        <ul class="list-disc list-inside text-sm text-slate-700 space-y-2">
+                            <li><strong>2인 1조 이동:</strong> 단독 행동 자제</li>
+                            <li><strong>시간 엄수:</strong> 단체 일정 지연 방지</li>
+                            <li><strong>촬영 주의:</strong> 공장/보안 시설 촬영 금지</li>
+                            <li>정치/민감 이슈 언급 및 비하 발언 삼가</li>
+                        </ul>
+                    </div>
+                    <!-- Apps -->
+                    <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+                        <h3 class="text-lg font-bold mb-3 flex items-center text-indigo-800">
+                            📱 필수 설치 앱 (추천)
+                        </h3>
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                            <div class="bg-slate-50 p-2 rounded border text-center">
+                                <span class="block font-bold">Alipay</span>
+                                <span class="text-xs text-slate-500">결제</span>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border text-center">
+                                <span class="block font-bold">WeChat</span>
+                                <span class="text-xs text-slate-500">메신저</span>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border text-center">
+                                <span class="block font-bold">고덕지도</span>
+                                <span class="text-xs text-slate-500">지도(Amap)</span>
+                            </div>
+                            <div class="bg-slate-50 p-2 rounded border text-center">
+                                <span class="block font-bold">Papago</span>
+                                <span class="text-xs text-slate-500">번역</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -402,37 +555,15 @@
         <!-- Checklist Section -->
         <section id="checklist" class="py-20 bg-white">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">출국 전 필수 체크리스트</h2>
-                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-                    <!-- Interactive List -->
-                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
-                        <h3 class="text-xl font-bold mb-6 flex items-center">✅ 준비물 체크</h3>
-                        <div id="checklist-container" class="space-y-4">
-                            <!-- JS generates items -->
-                        </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">준비물 체크리스트</h2>
+                <p class="text-center text-slate-600 mb-12">빠진 물건이 없는지 출국 전 마지막으로 확인하세요.</p>
+                
+                <div class="max-w-3xl mx-auto bg-slate-50 p-8 rounded-2xl shadow-lg border border-slate-200">
+                    <div id="checklist-container" class="space-y-3">
+                        <!-- JS generates items -->
                     </div>
-                    <!-- Important Notice -->
-                    <div class="bg-yellow-50 p-8 rounded-2xl border border-yellow-200">
-                        <h3 class="text-xl font-bold mb-6 text-yellow-800 flex items-center">🚨 중요 안내사항</h3>
-                        <ul class="space-y-4 text-sm md:text-base text-slate-700">
-                            <li class="flex items-start">
-                                <span class="mr-3 text-xl">🛂</span>
-                                <div>
-                                    <strong class="text-slate-900">무비자 입국 연장 안내:</strong><br>
-                                    <span class="text-blue-700 font-bold">2026년 12월 31일까지 한국인 무비자 입국</span>이 가능합니다.<br>
-                                    (출발일: 2026년 1월 12일 적용 대상)<br>
-                                    단, <strong class="text-red-600">입국신고서</strong>는 반드시 작성해야 합니다.<br>
-                                    <div class="mt-2 text-sm bg-white p-2 rounded border border-yellow-300">
-                                        1️⃣ <strong>기내 작성:</strong> 승무원이 배부하는 종이 카드 작성<br>
-                                        2️⃣ <strong>온라인 작성:</strong> 사전 모바일 앱 작성 후 QR코드 제시
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="mr-3 text-xl">💳</span>
-                                <span><strong>결제 수단:</strong> 중국은 현금 사용이 어렵습니다. <span class="text-red-600 font-bold">알리페이/위챗페이</span> 등록 필수.</span>
-                            </li>
-                        </ul>
+                    <div class="mt-6 text-center">
+                        <button onclick="resetChecklist()" class="text-xs text-slate-400 underline hover:text-slate-600">체크리스트 초기화</button>
                     </div>
                 </div>
             </div>
@@ -445,16 +576,16 @@
                 <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="bg-white p-6 rounded-lg shadow-sm">
                         <h4 class="font-bold text-red-600 mb-2">현지 긴급</h4>
-                        <p>경찰 110 / 소방 119 / 구급 120</p>
+                        <p class="text-slate-700">경찰 110 / 소방 119 / 구급 120</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-sm border-2 border-yellow-400 flex flex-col items-center justify-center">
                         <h4 class="font-bold text-slate-900 mb-2">투어메이커 담당자</h4>
-                        <p class="font-medium">총괄: 조혁 이사 (010-4249-4026)</p>
-                        <p class="font-medium">인솔: 이재명 (010-9443-7881)</p>
+                        <p class="font-medium text-slate-700">총괄: 조혁 이사 (010-4249-4026)</p>
+                        <p class="font-medium text-slate-700">인솔: 이재명 (010-9443-7881)</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-sm">
                         <h4 class="font-bold text-blue-600 mb-2">영사관</h4>
-                        <p>상하이 총영사관: +86-21-6295-5000</p>
+                        <p class="text-slate-700">상하이 총영사관: +86-21-6295-5000</p>
                     </div>
                 </div>
             </div>
@@ -463,15 +594,35 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 text-center border-t border-slate-800">
-        <div class="container mx-auto px-4">
-            <p class="mb-4 font-medium text-slate-300">성공적인 탐방이 되도록 투어메이커가 최선을 다해 지원하겠습니다.</p>
-            <p class="text-sm">&copy; 2026 Tourmaker. All Rights Reserved.</p>
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="container mx-auto px-4 text-center">
+            <!-- New Tourmaker Logo -->
+            <div class="mb-6 flex justify-center">
+                <img src="https://blogger.googleusercontent.com/img/a/AVvXsEi0YSsOZ847rEAjEI5w8uFj7k66WmuO18z2dZuvC5dR80SjnRbjOSrWRmqAP3CrBLPQgWQloK8Ic9n15Kjj879TNlCy8dGxyArnbDnorHB9VhqP-9dqOAb0Dnb0TOf67vZ94O-z_NQ0KUCqv7Ig-SEEWE4yESfTvJXwTgSn5wj03vT048UiCyMyl-hF-6w" alt="Tourmaker Footer Logo" class="h-10 md:h-12 w-auto opacity-80 hover:opacity-100 transition-opacity">
+            </div>
+            
+            <p class="mb-2 font-medium text-slate-300">성공적인 탐방이 되도록 투어메이커가 최선을 다해 지원하겠습니다.</p>
+            <p class="text-sm text-slate-600">&copy; 2026 Tourmaker. All Rights Reserved.</p>
         </div>
     </footer>
 
     <!-- JavaScript Logic -->
     <script>
+        // Video Play Logic
+        function playVideo(element, videoId) {
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            iframe.title = "YouTube Video";
+            iframe.className = "w-full h-full";
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen = true;
+            
+            // Clear current content and add iframe
+            element.innerHTML = '';
+            element.appendChild(iframe);
+            element.classList.remove('cursor-pointer', 'group'); // Remove hover effects
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
             
             // 1. Navigation Active Scroll Spy
@@ -492,37 +643,38 @@
             }, { threshold: 0.25 });
             sections.forEach(section => observer.observe(section));
             
-            // 2. Schedule Data - Restored & Detailed (Updated Day 3)
+            // 2. Schedule Data
             const scheduleData = {
                 day1: {
                     title: 'DAY 1: 1월 12일 (월) - 출국 및 항주 AI 체험',
                     items: [
-                        { time: '09:20', desc: '인천 국제공항 출발 (KE107)', icon: '✈️' },
-                        { time: '10:55', desc: '항주 샤오산 국제공항 도착', icon: '🛬' },
-                        { time: '오후', desc: '가이드 미팅 후 중식 (사천요리)', icon: '🍴' },
-                        { time: '15:00', desc: '항저우 류샤오롱 라이프 전시관 (관계자 미팅)', icon: '💡' },
-                        { time: '18:00', desc: '<strong class="text-yellow-700">친청리 허마 스마트마트</strong> (안면인식 결제 체험)', icon: '🛒' },
+                        { time: '09:00', desc: '<span class="text-red-600 font-bold">인천공항 T2 C카운터 앞 도너츠 가게 집합</span>', icon: '🚩' },
+                        { time: '11:55', desc: '인천 국제공항 출발 (KE107)', icon: '✈️' },
+                        { time: '13:30', desc: '항주 샤오산 국제공항 도착', icon: '🛬' },
+                        { time: '15:30', desc: '<strong class="text-blue-700">항저우 류샤오롱 라이프 전시관</strong> (관계자 미팅)', icon: '💡' },
+                        { time: '석식', desc: '알리바바 (또는 현지식)', icon: '🍴' },
                         { time: '숙박', desc: '항주 플라이주(FlyZoo) 호텔 (알리바바 무인 호텔)', icon: '🏨' },
                     ]
                 },
                 day2: {
                     title: 'DAY 2: 1월 13일 (화) - 알리바바 & 상해 이동',
                     items: [
-                        { time: '09:00', desc: '<strong class="text-yellow-700">알리바바(Alibaba) 본사 공식 방문</strong>', icon: '🏢' },
-                        { time: '11:00', desc: '스마트버스 탑승 (L4 자율주행 12인승)', icon: '🤖' },
-                        { time: '점심', desc: '항주 특색요리 (동파육) 후 상해 이동 (약 3시간)', icon: '🚌' },
-                        { time: '18:00', desc: '<strong class="text-yellow-700">바이두 ApolloPark</strong> 무인운전 체험', icon: '🚗' },
+                        { time: '09:00', desc: '<strong class="text-yellow-700">알리바바(Alibaba) 본사 공식 방문</strong> (관계자 설명)', icon: '🏢' },
+                        { time: '10:30', desc: '스마트버스 체험 (12인승 자율주행)', icon: '🤖' },
+                        { time: '중식', desc: '항주 특색요리 (동파육)', icon: '🍖' },
+                        { time: '오후', desc: '상해로 이동 (약 3시간 소요)', icon: '🚌' },
+                        { time: '16:00', desc: '<strong class="text-yellow-700">바이두 ApolloPark</strong> 무인운전 체험', icon: '🚗' },
+                        { time: '석식', desc: '한식', icon: '🍚' },
                         { time: '숙박', desc: '상해 포동 베스트 혹은 동급', icon: '🏨' },
                     ]
                 },
                 day3: {
                     title: 'DAY 3: 1월 14일 (수) - 기업 탐방 및 특강',
                     items: [
-                        { time: '09:00', desc: '<strong class="text-indigo-700">레노버(Lenovo) 미래센터</strong> 방문', icon: '💻' },
-                        // Weaver Deleted here
-                        { time: '점심', desc: '샤브샤브 무제한', icon: '🍴' },
-                        { time: '14:00', desc: '<strong class="text-indigo-900">[특강 1]</strong> 중국 IT 개론 (신판수 대표)', icon: '🎙️' },
-                        { time: '15:30', desc: '<strong class="text-blue-900">[특강 2]</strong> 중국 AI 인프라 (신동욱 대표)', icon: '📡' },
+                        { time: '10:00', desc: '<strong class="text-indigo-700">레노버(Lenovo) 미래센터</strong> 방문 (관계자 설명)', icon: '💻' },
+                        { time: '중식', desc: '샤브샤브 무제한', icon: '🍲' },
+                        { time: '오후', desc: '<strong class="text-indigo-900">[특강]</strong> 중국 IT 개론 & AI 인프라 (신판수/신동욱 대표)', icon: '🎙️' },
+                        { time: '20:00', desc: '<strong class="text-green-700">친청리 허마 스마트마트</strong> 체험', icon: '🛒' },
                         { time: '숙박', desc: '상해 포동 베스트 혹은 동급', icon: '🏨' },
                     ]
                 },
@@ -531,7 +683,7 @@
                     items: [
                         { time: '오전', desc: '호텔 조식 후 이동', icon: '🥐' },
                         { time: '10:00', desc: '동화대학교(Donghua Univ) 공식 방문', icon: '🎓' },
-                        { time: '점심', desc: '자유식', icon: '🍴' },
+                        { time: '중식', desc: '자유식', icon: '🍴' },
                         { time: '오후', desc: '상해 시내 문화 탐방 (학생 자율)', icon: '🛍️' },
                         { time: '숙박', desc: '상해 포동 베스트 혹은 동급', icon: '🏨' },
                     ]
@@ -539,9 +691,9 @@
                 day5: {
                     title: 'DAY 5: 1월 16일 (금) - 귀국',
                     items: [
-                        { time: '08:50', desc: '공항으로 이동', icon: '🚌' },
-                        { time: '12:00', desc: '상해 푸동 국제공항 출발 (KE892)', icon: '✈️' },
-                        { time: '15:20', desc: '인천 국제공항 도착', icon: '🛬' },
+                        { time: '오전', desc: '호텔 조식 후 공항으로 이동', icon: '🚌' },
+                        { time: '14:00', desc: '상해 푸동 국제공항 출발 (KE888)', icon: '✈️' },
+                        { time: '17:10', desc: '인천 국제공항 도착', icon: '🛬' },
                     ]
                 }
             };
@@ -582,26 +734,37 @@
             const checklistContainer = document.getElementById('checklist-container');
             const checklistItems = [
                 { id: 'passport', text: '여권 (유효기간 6개월 이상 필수)' },
-                { id: 'arrival_card', text: '입국신고서 (종이 또는 QR)' },
-                { id: 'ticket', text: '항공권 (E-티켓)' },
-                { id: 'money', text: '알리페이/위챗페이 설치 (필수)' },
-                { id: 'adapter', text: '멀티 어댑터 (돼지코)' },
-                { id: 'meds', text: '개인 상비약' }
+                { id: 'arrival_card', text: '전자 입국신고서 사전 작성 (필수)' },
+                { id: 'ticket', text: '항공권 (E-티켓 / 모바일 탑승권)' },
+                { id: 'pay_app', text: '알리페이/위챗페이 설치 및 카드 등록' },
+                { id: 'cash', text: '소액 위안화 현금 (비상용)' },
+                { id: 'adapter', text: '멀티 어댑터(돼지코) & 멀티탭' },
+                { id: 'battery', text: '보조배터리 및 충전 케이블' },
+                { id: 'meds', text: '개인 상비약 (두통/소화제/지사제 등)' },
+                { id: 'clothes', text: '방한복(패딩/코트) & 여벌 옷' },
+                { id: 'stationery', text: '필기구 및 노트 또는 태블릿' }
             ];
 
             checklistItems.forEach(item => {
                 const div = document.createElement('div');
-                div.className = 'flex items-center p-3 bg-white rounded-lg shadow-sm border border-slate-100';
+                div.className = 'flex items-center p-3 bg-white rounded-lg border border-slate-200 hover:bg-slate-100 transition-colors shadow-sm';
                 div.innerHTML = `
                     <input type="checkbox" id="${item.id}" class="h-5 w-5 text-yellow-600 rounded border-gray-300 focus:ring-yellow-500 cursor-pointer">
-                    <label for="${item.id}" class="ml-3 text-slate-700 font-medium cursor-pointer flex-grow">${item.text}</label>
+                    <label for="${item.id}" class="ml-3 text-slate-700 font-medium cursor-pointer flex-grow select-none">${item.text}</label>
                 `;
                 checklistContainer.appendChild(div);
                 
                 const checkbox = div.querySelector('input');
-                checkbox.checked = localStorage.getItem(item.id) === 'true';
-                checkbox.addEventListener('change', (e) => localStorage.setItem(item.id, e.target.checked));
+                checkbox.checked = localStorage.getItem('tourmaker_check_' + item.id) === 'true';
+                checkbox.addEventListener('change', (e) => localStorage.setItem('tourmaker_check_' + item.id, e.target.checked));
             });
+
+            window.resetChecklist = function() {
+                checklistItems.forEach(item => {
+                    localStorage.removeItem('tourmaker_check_' + item.id);
+                    document.getElementById(item.id).checked = false;
+                });
+            }
         });
     </script>
 </body>
