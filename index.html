@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <!-- 🚨 Google Analytics (GA4) - Tourmaker 통합 관리 [추가됨] -->
+    <!-- 🚨 Google Analytics (GA4) - Tourmaker 통합 관리 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLH9GD9SVR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -430,7 +430,7 @@
         <section id="timeline" class="py-20 bg-white">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-2">4박 5일 공식 일정</h2>
-                <p class="text-center text-slate-500 text-sm mb-10">※ 현지 사정에 의하여 변경될 수 있습니다.</p>
+                <p class="text-center text-slate-500 text-sm mb-10">※ 현지 사정 및 날씨에 의하여 변경될 수 있습니다.</p>
                 
                 <!-- Tab Navigation -->
                 <div class="max-w-5xl mx-auto bg-slate-50 rounded-t-2xl shadow-sm border-b overflow-hidden flex flex-wrap">
@@ -609,13 +609,13 @@
         <section id="emergency" class="py-20 bg-slate-100">
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-2xl font-bold mb-8">비상 연락망</h2>
-                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="bg-white p-6 rounded-lg shadow-sm">
                         <h4 class="font-bold text-red-600 mb-2">현지 긴급</h4>
                         <p class="text-slate-700">경찰 110 / 소방 119</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-sm border-2 border-yellow-400 flex flex-col items-center justify-center">
-                        <h4 class="font-bold text-slate-900 mb-2">투어메이커 담당자</h4>
+                        <h4 class="font-bold text-slate-900 mb-2">투어메이커</h4>
                         <div class="text-center mb-2">
                             <p class="font-medium text-slate-700">총괄: 조혁 이사</p>
                             <a href="tel:01042494026" class="text-sm text-blue-600">010-4249-4026</a>
@@ -623,6 +623,15 @@
                         <div class="text-center pt-2 border-t border-slate-100 w-full">
                             <p class="font-medium text-slate-700">인솔: 이재명</p>
                             <a href="tel:01094437881" class="text-sm text-blue-600">010-9443-7881</a>
+                        </div>
+                    </div>
+                     <!-- Added Local Guide -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border-2 border-green-400 flex flex-col items-center justify-center">
+                        <h4 class="font-bold text-green-700 mb-2">현지 가이드</h4>
+                        <div class="text-center">
+                            <p class="font-medium text-slate-900">김광휘 (남)</p>
+                            <a href="tel:13816453230" class="text-sm text-blue-600 font-bold">138-1645-3230</a>
+                            <p class="text-xs text-slate-400 mt-1">현지 통화 시 국번 확인</p>
                         </div>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-sm">
@@ -731,7 +740,7 @@
             sections.forEach(section => observer.observe(section));
             
             // ---------------------------------------------------------
-            // 3. Schedule Data (Updated Meals)
+            // 3. Schedule Data (UPDATED v2)
             // ---------------------------------------------------------
             const scheduleData = {
                 day1: {
@@ -740,10 +749,10 @@
                         { time: '09:00', desc: '<span class="text-red-600 font-bold">인천공항 T2 C카운터 앞 도너츠 가게 집합</span>', icon: '🚩' },
                         { time: '11:55', desc: '인천 국제공항 출발 (KE107)', icon: '✈️' },
                         { time: '13:30', desc: '항주 샤오산 국제공항 도착', icon: '🛬' },
-                        { time: '중식', desc: '<strong class="text-slate-800">사천요리 (현지식)</strong>', icon: '🍜' },
-                        { time: '15:30', desc: '<strong class="text-blue-700">항저우 류샤오롱 라이프 전시관</strong> (관계자 미팅)', icon: '💡' },
+                        { time: '중식', desc: '<strong class="text-slate-800">기내식</strong>', icon: '🍱' },
+                        { time: '16:00', desc: '<strong class="text-blue-700">항저우 류샤오롱 라이프 전시관</strong><br><span class="text-sm text-slate-600">관계자 설명 및 가이드 통역</span>', icon: '💡' },
                         { time: '석식', desc: '<strong class="text-slate-800">알리바바 호텔식</strong>', icon: '🍴' },
-                        { time: '숙박', desc: '항주 플라이주(FlyZoo) 호텔 (알리바바 무인 호텔)', icon: '🏨' },
+                        { time: '숙박', desc: '항주 플라이주(FlyZoo) 호텔 <span class="text-sm font-bold text-slate-500 block">Tel: 0571-8721-7777</span>', icon: '🏨' },
                     ]
                 },
                 day2: {
@@ -753,20 +762,19 @@
                         { time: '10:30', desc: '스마트버스 체험 (12인승 자율주행)', icon: '🤖' },
                         { time: '중식', desc: '<strong class="text-slate-800">항주 특색요리 (동파육)</strong>', icon: '🍖' },
                         { time: '오후', desc: '상해로 이동 (약 3시간 소요)', icon: '🚌' },
-                        { time: '16:00', desc: '<strong class="text-yellow-700">바이두 ApolloPark</strong> 무인운전 체험', icon: '🚗' },
+                        { time: '16:00', desc: '<strong class="text-yellow-700">바이두 ApolloPark</strong> 무인운전 체험<br><span class="text-sm text-slate-600">관계자 설명</span>', icon: '🚗' },
                         { time: '석식', desc: '한식', icon: '🍚' },
-                        { time: '숙박', desc: '상해 포동 베스트 혹은 동급', icon: '🏨' },
+                        { time: '숙박', desc: '상해 포동 위즈덤로즈 호텔 <span class="text-sm font-bold text-slate-500 block">(Wisdom Rose) Tel: 021-2093-7777</span>', icon: '🏨' },
                     ]
                 },
                 day3: {
                     title: 'DAY 3: 1월 14일 (수) - 기업 탐방 및 특강',
                     items: [
-                        { time: '10:00', desc: '<strong class="text-indigo-700">레노버(Lenovo) 미래센터</strong> 방문 (관계자 설명)', icon: '💻' },
+                        { time: '09:30', desc: '<strong class="text-indigo-700">레노버(Lenovo) 미래센터</strong> 방문<br><span class="text-sm text-slate-600">관계자 설명</span>', icon: '💻' },
                         { time: '중식', desc: '샤브샤브 무제한', icon: '🍲' },
                         { time: '오후', desc: '<strong class="text-indigo-900">[특강]</strong> 중국 IT 개론 & AI 인프라 (신판수/신동욱 대표)', icon: '🎙️' },
-                        { time: '20:00', desc: '<strong class="text-green-700">친청리 허마 스마트마트</strong> 체험', icon: '🛒' },
                         { time: '석식', desc: '<strong class="text-slate-800">한식</strong>', icon: '🍚' },
-                        { time: '숙박', desc: '상해 포동 베스트 혹은 동급', icon: '🏨' },
+                        { time: '숙박', desc: '상해 포동 위즈덤로즈 호텔 <span class="text-sm font-bold text-slate-500 block">(Wisdom Rose) Tel: 021-2093-7777</span>', icon: '🏨' },
                     ]
                 },
                 day4: {
@@ -775,9 +783,10 @@
                         { time: '오전', desc: '호텔 조식 후 이동', icon: '🥐' },
                         { time: '10:00', desc: '동화대학교(Donghua Univ) 공식 방문', icon: '🎓' },
                         { time: '중식', desc: '<span class="text-slate-500">자유식 (불포함)</span>', icon: '🍴' },
+                        { time: '오후', desc: '<strong class="text-green-700">친청리 허마 스마트마트</strong> 체험', icon: '🛒' },
                         { time: '오후', desc: '상해 시내 문화 탐방 (학생 자율)', icon: '🛍️' },
                         { time: '석식', desc: '<span class="text-slate-500">자유식 (불포함)</span>', icon: '🍴' },
-                        { time: '숙박', desc: '상해 포동 베스트 혹은 동급', icon: '🏨' },
+                        { time: '숙박', desc: '상해 포동 위즈덤로즈 호텔 <span class="text-sm font-bold text-slate-500 block">(Wisdom Rose) Tel: 021-2093-7777</span>', icon: '🏨' },
                     ]
                 },
                 day5: {
