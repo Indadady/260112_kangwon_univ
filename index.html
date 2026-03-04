@@ -15,6 +15,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2026 강원대학교 글로벌 패스파인더: Smart Guidebook</title>
+    
+    <!-- 카카오톡 등 공유용 썸네일 및 메타 태그 (투어메이커 정책 반영) -->
+    <meta property="og:title" content="2026 강원대학교 글로벌 패스파인더">
+    <meta property="og:description" content="중국 AI 혁신 & 글로벌 캠퍼스 그 현장으로">
+    <meta property="og:image" content="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEwMzBfMTg4%2FMDAxNjA0MDIxMjIxMTg1.VFSH4uoaQS5ngg8wAQ2xWaAdj0_tySQrwKl3euxXEOUg.bBmh6KjI6Nz-9VEexZkx4wrISGfjJ79Fwej1axVI-_sg.PNG.jimi990921%2F%25B0%25AD%25BF%25F8%25B4%25EB.png&type=a340">
+    <meta property="og:type" content="website">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,7 +73,7 @@
             background-image: linear-gradient(#e5e7eb 1px, transparent 1px);
             background-size: 100% 2rem;
             line-height: 2rem;
-            font-family: 'Noto Sans KR', sans-serif; /* 가독성을 위해 고딕 유지, 필요시 'Nanum Pen Script' */
+            font-family: 'Noto Sans KR', sans-serif;
             border-left: 4px solid #ef4444;
             box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
         }
@@ -131,8 +138,12 @@
                     중국 AI 혁신 & 글로벌 캠퍼스<br>그 현장으로
                 </h1>
                 
-                <div class="inline-block bg-white/95 p-4 rounded-xl shadow-lg mb-8">
-                    <img src="https://wwwk.kangwon.ac.kr/site/www/images/common/logo.png" alt="강원대학교 로고" class="h-12 w-auto">
+                <!-- 로고 컨테이너: JPG의 네모난 엣지를 감추고 자연스럽게 빛나는 프리미엄 뱃지 스타일 적용 -->
+                <div class="inline-block bg-white p-1 md:p-1.5 rounded-2xl shadow-[0_0_25px_rgba(255,255,255,0.3)] mb-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,255,255,0.5)] hover:-translate-y-1">
+                    <div class="rounded-xl overflow-hidden bg-white flex items-center justify-center px-2">
+                        <!-- 높이를 h-16(모바일), h-24(PC)로 대폭 키우고 scale-110으로 내부 여백 축소 -->
+                        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F001%2F2020%2F05%2F28%2FAKR20200528157300062_01_i_P4_20200528163911435.jpg&type=a340" alt="강원대학교 로고" class="h-16 md:h-24 w-auto scale-110 object-contain mix-blend-multiply">
+                    </div>
                 </div>
 
                 <div class="mt-4 max-w-3xl mx-auto bg-slate-900/60 backdrop-blur-sm p-6 rounded-xl border border-slate-700">
@@ -653,7 +664,16 @@
                 <img src="https://blogger.googleusercontent.com/img/a/AVvXsEi0YSsOZ847rEAjEI5w8uFj7k66WmuO18z2dZuvC5dR80SjnRbjOSrWRmqAP3CrBLPQgWQloK8Ic9n15Kjj879TNlCy8dGxyArnbDnorHB9VhqP-9dqOAb0Dnb0TOf67vZ94O-z_NQ0KUCqv7Ig-SEEWE4yESfTvJXwTgSn5wj03vT048UiCyMyl-hF-6w" alt="Tourmaker Footer Logo" class="h-10 md:h-12 w-auto opacity-80 hover:opacity-100 transition-opacity">
             </div>
             
-            <p class="mb-2 font-medium text-slate-300">성공적인 탐방이 되도록 투어메이커가 최선을 다해 지원하겠습니다.</p>
+            <p class="mb-6 font-medium text-slate-300">성공적인 탐방이 되도록 투어메이커가 최선을 다해 지원하겠습니다.</p>
+            
+            <!-- 투어메이커 홈페이지 바로가기 링크 버튼 생성 -->
+            <div class="mt-8 mb-8 flex justify-center">
+                <a href="https://tourmaker.kr" target="_blank" class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white px-6 py-3 rounded-lg border border-slate-700 transition-colors shadow-sm">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHfgIX70O5k6Anuo0UgALIdaG9jSga9auHu3uyz0uEirylGPAJnjN_qQbvEGMUvPqUQf_g9FMNUHRxlDcUBf4vZ3Mpy4TnA9WxbmzWYK11gt2zuy_Irl4wctNFjcjLyPo0GPXV792o_J7L9guRMuDfeC1gy7USwywjYbECZgzcsHybuGRRAXAnO1eNmP8/s320/logo.png" alt="Tourmaker Logo" class="h-5 w-auto">
+                    <span class="font-bold text-sm tracking-wide">투어메이커 홈페이지 바로가기</span>
+                </a>
+            </div>
+
             <p class="text-sm text-slate-600">&copy; 2026 Tourmaker. All Rights Reserved.</p>
         </div>
     </footer>
@@ -907,4 +927,3 @@
     </script>
 </body>
 </html>
-
